@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineReview</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo-faixa"><h1 class="logo">CineReview</h1></div>
+
+    <a href="{{ url_for('adicionar') }}" class="botao">Adicionar Resenha</a>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="divisor"></div>
+
+    <div class="meus-filmes">
+
+        <div class="topo-filmes">
+
+            <p class="contador-filmes">
+            Você já resenhou <strong>{{ total_filmes }}</strong>
+            filme{% if total_filmes != 1 %}s{% endif %}.
+            </p>
+
+            <form method="GET"
+                  action="{{ url_for('index') }}"
+                  class="filtro-busca">
+
+                <input
+                    type="text"
+                    name="busca"
+                    placeholder="Pesquisar filme..."
+                    value="{{ busca or '' }}"
+                    autocomplete="off">
+
+                <div class="botoes-pesquisa">
+
+                    <button type="submit">Buscar</button>
+
+                    {% if busca %}
+
+                    <a href="{{ url_for('index') }}" class="botao-voltar">Voltar</a>
+
+                    {% endif %}
+
+                </div>
+
+            </form>
+
+            <form method="GET"
+                  action="{{ url_for('index') }}"
+                  class="filtro-nota">
+
+                <label for="nota">Nota:</label>
+
+                <select name="nota" id="nota" onchange="this.form.submit()">
+
+                    <option value="" {% if not nota_minima %}selected{% endif %}>Todas</option>
+
+                    {% for i in range(0,10) %}
+
+                        <option value="{{ i }}"
+                            {% if nota_minima == i|string %}selected{% endif %}>
+                            {{ i }}
+                        </option>
+
+                    {% endfor %}
+
+                    <option value="10"
+                        {% if nota_minima == "10" %}selected{% endif %}>
+                        10
+                    </option>
+
+                </select>
+
+            </form>
+
+        </div>
+
+    </div>
+
+<div class="titulo-faixa">
+    <h2 class="titulo-filmes">Filmes Resenhados</h2>
+</div>
+
+    {% if nota_minima is not none and nota_minima != "" %}
+        <p class="contador-nota">
+            Você já resenhou
+            <strong>{{ filmes|length }}</strong>
+            filme{% if filmes|length != 1 %}s{% endif %}
+            com a nota <strong>{{ nota_minima }}</strong>.
+            </p>
+        {% endif %}
+
+    {% if filmes %}
+
+    <div class="cards">
+
+        {% for filme in filmes %}
+
+        <div class="card" id="filme-{{ filme.id }}">
+
+            <div class="card-topo">
+
+                <div class="info-filme">
+                    <h2>{{ filme.nome }}</h2>
+                    <span class="ano">{{ filme.ano }}</span>
+                </div>
+
+                <div class="nota nota-{{ filme.nota|int }}">⭐ {{ filme.nota }}/10</div>
+
+            </div>
+
+            <div class="resenha curta" data-resenha>
+{{ filme.resenha }}
+            </div>
+
+            {% if filme.is_long %}
+            <button class="ler-btn" onclick="alternarResenha(this)">Ler mais</button>
+            {% endif %}
+
+            <div class="card-botoes">
+
+                <a href="{{ url_for('editar', id=filme.id) }}"
+                   class="editar">Editar</a>
+
+                <form action="{{ url_for('excluir', id=filme.id) }}"
+                      method="POST">
+
+                    <button type="submit" class="excluir">Excluir</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+        {% if nota_minima %}
+
+        {% elif busca %}
+
+            <p class="nenhum-filme">Nenhum filme encontrado para sua busca.</p>
+
+        {% else %}
+
+            <p class="mensagem">Nenhuma resenha adicionada.</p>
+
+        {% endif %}
+
+    {% endif %}
+
+</div>
+
+<script>
+
+function alternarResenha(botao) {
+
+    const resenha = botao.previousElementSibling;
+
+    if (resenha.classList.contains("curta")) {
+
+        resenha.classList.remove("curta");
+        resenha.classList.add("completa");
+
+        botao.textContent = "Ler menos";
+
+    } else {
+
+        resenha.classList.remove("completa");
+        resenha.classList.add("curta");
+
+        botao.textContent = "Ler mais";
+    }
+}
+
+</script>
+
+</body>
+</html>

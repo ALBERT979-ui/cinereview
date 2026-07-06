@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Resenha</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Editar Resenha</h1>
+
+<form action="{{ url_for('editar', id=filme.id) }}" method="POST">
+
+    <label>Nome do Filme</label>
+    <input type="text" name="nome" value="{{ filme.nome }}" required>
+
+    <label>Ano</label>
+    <input type="number" name="ano" value="{{ filme.ano }}" required>
+
+    <label>Resenha</label>
+    <textarea name="resenha" rows="5" required>{{ filme.resenha }}</textarea>
+
+    <label>Nota (0 a 10)</label>
+    <input
+    type="number"
+    name="nota"
+    min="0"
+    max="10"
+    step="1"
+    required
+>
+    <div class="botoes">
+        <button class="botao" type="submit">Salvar alterações</button>
+        <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
+    </div>
+
+</form>
+
+</div>
+
+</body>
+</html>

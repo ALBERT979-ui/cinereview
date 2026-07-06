@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Resenha</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Adicionar Resenha</h1>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-container">
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<form action="{{ url_for('adicionar') }}" method="POST">
+
+    <label>Nome do Filme</label>
+    <input type="text" name="nome" required>
+
+    <label>Ano</label>
+    <input type="number" name="ano" min="1888" max="2026" required>
+
+    <label>Resenha</label>
+    <textarea name="resenha" rows="5" required></textarea>
+
+    <label>Nota (0 a 10)</label>
+    <input
+    type="number"
+    name="nota"
+    min="0"
+    max="10"
+    required
+>
+    <div class="botoes">
+        <button class="botao" type="submit">Salvar</button>
+        <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
+    </div>
+
+</form>
+
+</div>
+
+</body>
+</html>
