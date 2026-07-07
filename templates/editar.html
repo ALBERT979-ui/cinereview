@@ -9,34 +9,51 @@
 
 <div class="container">
 
-<h1>Editar Resenha</h1>
+    <h1>Editar Resenha</h1>
 
-<form action="{{ url_for('editar', id=filme.id) }}" method="POST">
+    <form action="{{ url_for('editar', id=filme.id) }}" method="POST">
 
-    <label>Nome do Filme</label>
-    <input type="text" name="nome" value="{{ filme.nome }}" required>
+        <label>Nome do Filme</label>
+        <input
+            type="text"
+            name="nome"
+            value="{{ filme.nome }}"
+            required
+        >
 
-    <label>Ano</label>
-    <input type="number" name="ano" value="{{ filme.ano }}" required>
+        <label>Ano</label>
+        <input
+            type="number"
+            name="ano"
+            value="{{ filme.ano }}"
+            required
+        >
 
-    <label>Resenha</label>
-    <textarea name="resenha" rows="5" required>{{ filme.resenha }}</textarea>
+        <label>Resenha</label>
+        <textarea
+            name="resenha"
+            rows="5"
+            required
+        >{{ filme.resenha }}</textarea>
 
-    <label>Nota (0 a 10)</label>
-    <input
-    type="number"
-    name="nota"
-    min="0"
-    max="10"
-    step="1"
-    required
->
-    <div class="botoes">
-        <button class="botao" type="submit">Salvar alterações</button>
-        <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
-    </div>
+        <label>Nota (0 a 10)</label>
+        <input
+            type="number"
+            name="nota"
+            min="0"
+            max="10"
+            step="1"
+            value="{{ filme.nota|int }}"
+            required
+        >
 
-</form>
+        <div class="botoes">
+            <button class="botao" type="submit">Salvar alterações</button>
+
+            <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
+        </div>
+
+    </form>
 
 </div>
 
