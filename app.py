@@ -1,180 +1,163 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-import json
-import os
-import unicodedata
 
-app = Flask(__name__, static_folder="static")
+from models.resenha_model import (
+    buscar_resenhas,
+    adicionar_resenha,
+    buscar_resenha_por_id,
+    atualizar_resenha,
+    excluir_resenha,
+    contar_resenhas
+)
+
+app = Flask(__name__)
 
 app.secret_key = "film_diary_secret_123"
-
-ARQUIVO_JSON = os.path.join(os.path.dirname(__file__), "database", "resenhas.json")
-
-def normalizar(texto):
-    texto = texto.lower().strip()
-    texto = unicodedata.normalize("NFD", texto)
-    return "".join(c for c in texto if unicodedata.category(c) != "Mn")
-
-def carregar_resenhas():
-    if not os.path.exists(ARQUIVO_JSON):
-        return []
-
-    with open(ARQUIVO_JSON, "r", encoding="utf-8") as arquivo:
-        try:
-            dados = json.load(arquivo)
-            return dados if isinstance(dados, list) else []
-        except json.JSONDecodeError:
-            return []
-
-def salvar_resenhas(resenhas):
-    with open(ARQUIVO_JSON, "w", encoding="utf-8") as arquivo:
-        json.dump(resenhas, arquivo, indent=4, ensure_ascii=False)
 
 @app.route("/")
 def index():
 
-    resenhas = carregar_resenhas()
+    busca = request.args.get(
+        "busca",
+        ""
+    )
 
-    total_filmes = len(resenhas)
+    nota_minima = request.args.get(
+        "nota"
+    )
 
-    busca = request.args.get("busca", "").strip()
+    if nota_minima == "None" or nota_minima == "":
 
-    if busca:
-        busca_norm = normalizar(busca)
+        nota_minima = None
 
-        resenhas = [
-            r for r in resenhas
-            if busca_norm in normalizar(r.get("nome", ""))
-        ]
+    ordem = request.args.get(
+        "ordem",
+        "recentes"
+    )
 
-    nota_minima = request.args.get("nota")
+    resenhas = buscar_resenhas(
+        busca,
+        nota_minima,
+        ordem
+    )
 
-    if nota_minima:
-        try:
-            nota = int(nota_minima)
-
-            resenhas = [
-                r for r in resenhas
-                if int(r.get("nota", 0)) == nota
-            ]
-
-        except ValueError:
-            pass
-
-    for r in resenhas:
-        r["is_long"] = len(r.get("resenha", "")) > 250
+    total_filmes = contar_resenhas()
 
     return render_template(
         "index.html",
         filmes=resenhas,
         total_filmes=total_filmes,
         busca=busca,
-        nota_minima=nota_minima
+        nota_minima=nota_minima,
+        ordem=ordem
     )
 
-@app.route("/adicionar", methods=["GET", "POST"])
+@app.route(
+    "/adicionar",
+    methods=["GET", "POST"]
+)
 def adicionar():
 
     if request.method == "POST":
 
-        resenhas = carregar_resenhas()
+        nome = request.form["nome"]
+        ano = request.form["ano"]
+        texto = request.form["resenha"]
+        nota = request.form["nota"]
 
-        nome = request.form.get("nome", "").strip()
-        ano = request.form.get("ano", "").strip()
-        resenha = request.form.get("resenha", "").strip()
-
-        nota_raw = request.form.get("nota", "").strip()
-
-        try:
-            nota = int(nota_raw)
-
-            if nota < 0 or nota > 10:
-                flash("A nota deve estar entre 0 e 10.")
-                return redirect(url_for("adicionar"))
-
-        except ValueError:
-            flash("A nota deve ser um número inteiro entre 0 e 10.")
-            return redirect(url_for("adicionar"))
-
-        existe = any(
-            r.get("nome", "").strip().lower() == nome.lower()
-            and r.get("ano", "").strip() == ano
-            and r.get("resenha", "").strip() == resenha
-            and int(r.get("nota", 0)) == nota
-            for r in resenhas
+        resultado = adicionar_resenha(
+            nome,
+            ano,
+            texto,
+            nota
         )
 
-        if existe:
-            flash("Essa resenha já existe!")
-            return redirect(url_for("adicionar"))
+        if resultado:
 
-        novo_id = max([r.get("id", 0) for r in resenhas], default=0) + 1
+            flash(
+                "Resenha adicionada com sucesso!",
+                "sucesso"
+            )
 
-        nova_resenha = {
-            "id": novo_id,
-            "nome": nome,
-            "ano": ano,
-            "resenha": resenha,
-            "nota": nota
-        }
+            return redirect(
+                url_for("index")
+            )
 
-        resenhas.append(nova_resenha)
-        salvar_resenhas(resenhas)
+        else:
 
-        flash("Resenha adicionada com sucesso!")
-        return redirect(url_for("index"))
+            flash(
+                "Essa resenha já existe!",
+                "erro"
+            )
 
-    return render_template("adicionar.html")
+    return render_template(
+        "adicionar.html"
+    )
 
-@app.route("/editar/<int:id>", methods=["GET", "POST"])
+@app.route(
+    "/editar/<int:id>",
+    methods=["GET", "POST"]
+)
 def editar(id):
 
-    resenhas = carregar_resenhas()
-
-    resenha = next((r for r in resenhas if r["id"] == id), None)
+    resenha = buscar_resenha_por_id(id)
 
     if not resenha:
-        return "Resenha não encontrada."
+
+        flash(
+            "Resenha não encontrada!",
+            "erro"
+        )
+
+        return redirect(
+            url_for("index")
+        )
 
     if request.method == "POST":
 
-        resenha["nome"] = request.form.get("nome", "").strip()
-        resenha["ano"] = request.form.get("ano", "").strip()
-        resenha["resenha"] = request.form.get("resenha", "").strip()
+        nome = request.form["nome"]
+        ano = request.form["ano"]
+        texto = request.form["resenha"]
+        nota = request.form["nota"]
 
-        nota_raw = request.form.get("nota", "").strip()
+        atualizar_resenha(
+            id,
+            nome,
+            ano,
+            texto,
+            nota
+        )
 
-        try:
-            nota = int(nota_raw)
+        flash(
+            "Resenha atualizada!",
+            "sucesso"
+        )
 
-            if nota < 0 or nota > 10:
-                flash("A nota deve estar entre 0 e 10.")
-                return redirect(url_for("editar", id=id))
+        return redirect(
+            url_for("index")
+        )
 
-            resenha["nota"] = nota
+    return render_template(
+        "editar.html",
+        resenha=resenha
+    )
 
-        except ValueError:
-            flash("A nota deve ser um número inteiro entre 0 e 10.")
-            return redirect(url_for("editar", id=id))
-
-        salvar_resenhas(resenhas)
-
-        flash("Resenha editada com sucesso!")
-        return redirect(url_for("index"))
-
-    return render_template("editar.html", filme=resenha)
-
-@app.route("/excluir/<int:id>", methods=["POST"])
+@app.route(
+    "/excluir/<int:id>",
+    methods=["POST"]
+)
 def excluir(id):
 
-    resenhas = carregar_resenhas()
+    excluir_resenha(id)
 
-    resenhas = [r for r in resenhas if r["id"] != id]
+    flash(
+        "Resenha excluída!",
+        "sucesso"
+    )
 
-    salvar_resenhas(resenhas)
-
-    flash("Resenha excluída com sucesso!")
-    return redirect(url_for("index"))
-
+    return redirect(
+        url_for("index")
+    )
 
 if __name__ == "__main__":
+
     app.run(debug=True)

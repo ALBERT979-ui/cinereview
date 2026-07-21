@@ -11,26 +11,26 @@
 
 <h1>Editar Resenha</h1>
 
-<form action="{{ url_for('editar', id=filme.id) }}" method="POST">
+<form action="{{ url_for('editar', id=resenha.id) }}" method="POST">
 
     <label>Nome do Filme</label>
-    <input type="text" name="nome" value="{{ filme.nome }}" required>
+    <input type="text" name="nome" value="{{ resenha.nome }}" required>
 
     <label>Ano</label>
-    <input type="number" name="ano" value="{{ filme.ano }}" required>
+    <input type="number" name="ano" value="{{ resenha.ano }}" required>
 
     <label>Resenha</label>
-    <textarea name="resenha" rows="5" required>{{ filme.resenha }}</textarea>
+    <textarea name="resenha" rows="5" required>{{ resenha.resenha }}</textarea>
 
     <label>Nota (0 a 10)</label>
-    <input
-    type="number"
-    name="nota"
-    min="0"
-    max="10"
-    step="1"
-    required
->
+    <select name="nota" id="nota" required>
+        {% for i in range(0, 11) %}
+            <option value="{{ i }}" {% if resenha.nota|int == i %}selected{% endif %}>
+                {{ i }}
+            </option>
+        {% endfor %}
+    </select>
+    
     <div class="botoes">
         <button class="botao" type="submit">Salvar alterações</button>
         <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
