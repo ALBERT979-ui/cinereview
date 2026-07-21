@@ -9,7 +9,7 @@
 
 <div class="container">
 
-<h1>Editar Resenha</h1>
+    <h1>Editar Resenha</h1>
 
 <form action="{{ url_for('editar', id=resenha.id) }}" method="POST">
 
@@ -30,13 +30,15 @@
             </option>
         {% endfor %}
     </select>
-    
+
     <div class="botoes">
         <button class="botao" type="submit">Salvar alterações</button>
         <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
     </div>
+            <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
+        </div>
 
-</form>
+    </form>
 
 </div>
 

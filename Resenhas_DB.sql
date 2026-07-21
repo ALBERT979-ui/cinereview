@@ -1,0 +1,577 @@
+CREATE TABLE resenha (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    ano INTEGER NOT NULL,
+    resenha TEXT NOT NULL,
+    nota INTEGER NOT NULL CHECK (nota BETWEEN 0 AND 10)
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Casa de Cera',
+2005,
+'A Casa de Cera é um daqueles filmes de terror que se apoia muito mais em conceito e atmosfera do que em profundidade narrativa ou construção sofisticada de personagens. A ideia central — uma cidade onde pessoas são transformadas em esculturas de cera vivas — é, por si só, forte e visualmente perturbadora, e talvez seja justamente esse o maior trunfo do filme. No entanto, ao desenvolver essa premissa, o longa não consegue sustentar o mesmo nível de impacto ao longo de toda a duração, alternando entre momentos genuinamente tensos e outros bastante previsíveis dentro da fórmula do slasher.
+
+Um dos pontos mais criticáveis é a forma como os personagens são construídos. Eles seguem arquétipos extremamente comuns do gênero: o grupo de jovens em viagem, cada um representando um estereótipo específico, sem grande profundidade psicológica. Isso faz com que a empatia do espectador seja limitada, já que a maioria deles não passa por um desenvolvimento significativo antes de serem colocados em perigo. Como resultado, o filme depende mais da violência e da estética do horror do que de um envolvimento emocional real com as vítimas.
+
+Por outro lado, o filme acerta ao trabalhar a ambientação da cidade abandonada. A sensação de isolamento é construída de maneira eficaz, e o espaço urbano degradado contribui para uma atmosfera desconfortável e opressiva. A escolha de transformar um ambiente que deveria ser familiar — uma pequena cidade — em algo estranho e ameaçador é um recurso clássico do terror, mas aqui ele funciona bem, especialmente na primeira metade do filme, quando o mistério ainda está sendo construído.
+
+O grande diferencial da obra está na estética das figuras de cera. Há um desconforto real na ideia de corpos humanos preservados como objetos decorativos, e o filme explora isso de maneira visualmente marcante. Em alguns momentos, a direção consegue criar imagens que ficam na memória justamente pelo choque entre o belo e o grotesco. No entanto, esse impacto perde força conforme o filme avança e a mecânica do vilão e da cidade se torna mais explícita, reduzindo o mistério inicial.
+
+Narrativamente, A Casa de Cera não busca reinventar o gênero, e isso não seria necessariamente um problema se houvesse uma execução mais consistente. O filme oscila entre tentar ser um terror atmosférico e um slasher convencional, sem aprofundar totalmente nenhuma das duas abordagens. Essa indecisão acaba deixando a experiência um pouco irregular, especialmente na reta final, onde a ação ganha mais espaço do que a construção de tensão.
+
+No fim, o filme funciona melhor como uma experiência estética e sensorial do que como uma obra de terror memorável ou inovadora. Ele entrega momentos de impacto visual e uma premissa interessante, mas não explora totalmente o potencial psicológico ou simbólico da ideia central. Ainda assim, dentro do gênero slasher dos anos 2000, consegue se destacar o suficiente para ser lembrado — não como um clássico, mas como um título competente, embora limitado, no uso do horror visual.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Chegada',
+2016,
+'A Chegada é um filme que se destaca justamente por fugir das convenções tradicionais da ficção científica centrada em “primeiro contato”. Em vez de apostar em conflito militar ou espetáculo destrutivo, a obra escolhe um caminho mais contemplativo e intelectual, colocando a linguagem no centro da narrativa. Essa escolha é extremamente ousada e, em muitos momentos, é o que sustenta o filme como algo único dentro do gênero.
+
+O grande mérito do filme está na forma como ele transforma a comunicação em um problema filosófico e não apenas técnico. A tentativa de decifrar a linguagem dos heptápodes não é tratada como um quebra-cabeça simples, mas como um processo que envolve mudança de percepção de mundo. Essa abordagem dá ao filme uma profundidade rara, porque sugere que entender o “outro” pode significar, na prática, transformar a própria mente humana.
+
+Por outro lado, essa mesma escolha narrativa pode tornar o ritmo do filme mais lento e até distante para alguns espectadores. A progressão é deliberadamente gradual, com poucas explosões de ação ou momentos de grande impacto convencional. Isso não é um defeito em si, mas exige um tipo de atenção mais paciente e reflexiva, o que pode afastar quem espera uma ficção científica mais tradicional ou dinâmica.
+
+A estrutura emocional da obra, especialmente ligada à vida pessoal de Louise, é um dos elementos mais discutíveis. A revelação de que certas cenas não são flashbacks, mas visões do futuro, reorganiza toda a compreensão da narrativa. Esse recurso é interessante do ponto de vista conceitual, mas também levanta uma crítica possível: parte do impacto emocional depende de uma reinterpretação tardia que pode parecer construída de forma artificial, como um mecanismo de surpresa mais do que de desenvolvimento natural.
+
+Ainda assim, é inegável que o filme consegue equilibrar bem ciência, emoção e filosofia. A direção de Villeneuve mantém um tom constante de contemplação e estranhamento, evitando excessos visuais ou explicações simplificadas demais. Os heptápodes são apresentados com um mistério calculado, reforçando a ideia de que nem tudo precisa ser totalmente compreendido para ser significativo. Isso dá ao filme uma força estética e temática considerável.
+
+No final, A Chegada funciona mais como uma reflexão sobre tempo, linguagem e perda do que como uma narrativa de ficção científica convencional. É um filme que valoriza mais as ideias do que os eventos, e por isso pode ser interpretado como frio por alguns e profundamente comovente por outros. Sua principal qualidade talvez esteja justamente nessa dualidade: ele não entrega respostas fáceis, mas exige do espectador uma mudança de perspectiva — algo que poucos filmes do gênero realmente conseguem fazer com tanta consistência.',
+8
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'O Ritual',
+2017,
+'O Ritual é um filme de terror que se apoia muito mais na atmosfera e no peso psicológico dos personagens do que em sustos fáceis ou violência explícita. O que chama atenção de início é a forma como o filme tenta misturar terror folclórico com drama de culpa e luto, criando uma narrativa que vai além da simples ideia de “sobrevivência em uma floresta maldita”. Essa ambição já coloca a obra em um lugar interessante dentro do gênero, mesmo que nem sempre ela consiga sustentar todas as suas propostas com o mesmo impacto.
+
+Um dos maiores acertos do filme está na construção da ambientação. A floresta não é apenas um cenário, mas uma presença constante que pressiona os personagens psicologicamente. O isolamento, a desorientação e a sensação de estar sendo observado criam um clima de desconforto progressivo muito eficaz. Em muitos momentos, o terror não vem do que é mostrado diretamente, mas do que é sugerido — e isso funciona especialmente bem na primeira metade do filme.
+
+Por outro lado, os personagens, apesar de carregarem um trauma importante, nem sempre são desenvolvidos de forma equilibrada. O protagonista Luke até recebe um foco mais consistente, principalmente por causa da culpa que carrega pela morte do amigo, mas os outros membros do grupo acabam ficando mais como funções narrativas do que pessoas realmente aprofundadas. Isso enfraquece um pouco o impacto emocional das perdas e decisões ao longo da história.
+
+A introdução da criatura inspirada na mitologia nórdica é um dos elementos mais interessantes da obra, porque dá ao filme uma identidade própria dentro do terror contemporâneo. Não se trata apenas de um monstro genérico, mas de uma entidade com simbolismo, ligada a medo, julgamento e fragilidade humana. Ainda assim, a revelação e o uso da criatura poderiam ser mais bem explorados, já que o filme parece segurar demais o potencial que ele mesmo constrói.
+
+Em termos de ritmo, O Ritual sofre com certa irregularidade. A primeira metade é mais atmosférica e introspectiva, enquanto a segunda se torna mais direta e voltada para o confronto, o que cria um contraste nem sempre bem equilibrado. Essa mudança não é necessariamente ruim, mas faz com que o filme perca parte da sutileza inicial e se aproxime de uma estrutura mais convencional de terror de sobrevivência.
+
+No final, o filme se destaca mais pelo clima e pela ideia do que pela execução completa. Ele funciona bem como uma experiência de terror psicológico com elementos folclóricos, mas não chega a explorar todo o potencial de sua própria premissa. Ainda assim, O Ritual consegue ser eficaz ao transmitir desconforto e solidão, deixando uma impressão mais forte pela atmosfera do que pela narrativa em si.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Guerra do Amanhã',
+2021,
+'A Guerra do Amanhã é um filme que tenta equilibrar ficção científica, ação militar e drama familiar, mas acaba ficando mais forte como espetáculo de premissa do que como construção narrativa consistente. A ideia de recrutamento de pessoas do presente para lutar em uma guerra no futuro contra uma ameaça alienígena é, por si só, extremamente chamativa, e o filme sabe explorar bem esse impacto inicial. No entanto, a execução nem sempre acompanha a grandiosidade do conceito.
+
+Um dos aspectos mais interessantes do filme é justamente essa relação entre tempo e responsabilidade geracional. A narrativa tenta construir a ideia de que o futuro não é algo distante e abstrato, mas diretamente conectado às escolhas do presente. Essa conexão é reforçada pela presença da filha do protagonista no futuro, o que cria um elo emocional que deveria ser o coração da história. Porém, em muitos momentos, essa camada emocional acaba sendo ofuscada pela estrutura de ação constante.
+
+O filme se apoia fortemente em sequências de combate contra os “White Spikes”, criaturas que representam uma ameaça global. Essas cenas são visualmente competentes e entregam o tipo de adrenalina esperada de um blockbuster moderno, mas frequentemente seguem uma lógica bastante previsível de progressão. A repetição de confrontos e a dependência de ação direta acabam reduzindo o espaço para desenvolvimento mais profundo dos personagens ou do universo apresentado.
+
+O protagonista Dan Forester funciona mais como um veículo para a ação do que como um personagem realmente complexo. Sua motivação principal — proteger sua filha e tentar mudar o futuro — é clara, mas pouco explorada em termos emocionais mais sutis. O filme menciona conflitos internos, como sua relação com o pai e suas escolhas de vida, mas raramente aprofunda essas questões de forma significativa, preferindo retornar ao ritmo acelerado da narrativa.
+
+Outro ponto que pode ser criticado é a forma como o filme trata a lógica do próprio conceito de viagem no tempo. Embora a premissa seja interessante, há uma certa flexibilidade narrativa que evita explorar completamente as consequências mais complexas desse tipo de tecnologia. Isso não chega a comprometer totalmente a experiência, mas limita o potencial do roteiro de se tornar mais sofisticado dentro da ficção científica.
+
+No final, A Guerra do Amanhã funciona melhor como entretenimento de alto orçamento do que como uma obra de ficção científica com profundidade temática. Ele entrega ação, criaturas e escala global de forma satisfatória, mas deixa a sensação de que poderia ter explorado muito mais suas próprias ideias. É um filme que impressiona no impacto imediato, mas perde força quando analisado com mais atenção crítica.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Extinção',
+2018,
+'Extinção é um filme de ficção científica que tenta brincar com a expectativa do espectador ao construir inicialmente uma narrativa que parece ser sobre invasão alienígena, apenas para depois subverter essa ideia. Essa proposta, por si só, é interessante, porque o filme se apoia fortemente na dúvida e na instabilidade da percepção do protagonista. No entanto, essa mesma estratégia também expõe uma certa fragilidade na execução, já que o impacto depende quase totalmente da virada de perspectiva.
+
+O início do filme é construído em cima de uma sensação constante de paranoia. O protagonista, Peter, é apresentado como alguém atormentado por sonhos recorrentes de destruição em massa e invasões alienígenas, o que gera uma dúvida persistente sobre sua sanidade. Essa escolha narrativa cria uma boa tensão psicológica, mas ao mesmo tempo mantém o espectador distante de respostas concretas, o que pode fazer o ritmo parecer irregular em alguns momentos.
+
+Quando a “invasão” finalmente se manifesta de forma mais direta, o filme assume uma estética de ação e destruição típica da ficção científica convencional. Nesse ponto, há uma tentativa clara de entregar espetáculo visual e caos global, mas o desenvolvimento dos eventos segue uma lógica relativamente previsível. O filme parece oscilar entre ser um thriller psicológico e um filme de ação sci-fi, sem se comprometer totalmente com nenhuma das duas abordagens.
+
+A grande virada narrativa, que revela uma nova leitura dos acontecimentos, é o elemento mais ambicioso da obra. A ideia de que o conflito não é exatamente o que parecia ser introduz uma camada de reinterpretação que tenta transformar toda a experiência anterior. Essa estrutura pode ser vista como um acerto conceitual, pois valoriza a releitura da história, mas também pode ser criticada por depender excessivamente do efeito surpresa em vez de uma construção gradual mais sólida.
+
+Outro ponto que merece crítica é o desenvolvimento emocional dos personagens, que acaba ficando em segundo plano diante da necessidade de sustentar o mistério central. As relações familiares, especialmente entre Peter e sua esposa e filhos, são importantes para a trama, mas muitas vezes funcionam mais como apoio temático do que como elementos profundamente explorados. Isso reduz o impacto emocional da reviravolta, que poderia ser mais forte se os personagens fossem mais bem trabalhados.
+
+No final, Extinção é um filme que se destaca mais pela ideia do que pela execução. Ele tenta desconstruir a própria narrativa de ficção científica tradicional, mas nem sempre consegue sustentar o equilíbrio entre mistério, ação e drama familiar. Ainda assim, é uma obra interessante dentro do gênero por propor uma mudança de perspectiva que reorganiza completamente a leitura da história, mesmo que essa virada não seja tão impactante quanto poderia ser.',
+6
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Cuidado com Quem Chama',
+2020,
+'Cuidado com Quem Chama é um filme de terror que se apoia muito mais na atmosfera digital e na ansiedade contemporânea do que em uma narrativa tradicional de horror bem estruturada. A ideia central — jovens realizando uma invocação sobrenatural por meio de uma chamada de vídeo — tenta atualizar o gênero para a era das redes sociais e da comunicação online. Em teoria, isso é um caminho interessante, porque aproxima o terror de algo cotidiano, mas na prática o filme nem sempre consegue explorar todo o potencial dessa premissa.
+
+Um dos aspectos mais evidentes do filme é a tentativa de criar medo a partir da familiaridade tecnológica. A tela do computador, as chamadas de vídeo e a interação virtual são usadas como ferramentas de tensão, sugerindo que o terror pode surgir de dentro de espaços que normalmente associamos à segurança e ao convívio social. Essa abordagem é válida e até relevante dentro do contexto moderno, mas muitas vezes o filme se apoia mais na ideia do “terror digital” do que em uma construção consistente de suspense.
+
+Narrativamente, o filme sofre com certa irregularidade no ritmo e na construção de tensão. Em diversos momentos, a história parece mais preocupada em manter a ideia de mistério sobrenatural do que em desenvolver uma progressão sólida dos acontecimentos. Isso faz com que o impacto de algumas cenas de terror seja diluído, já que faltam bases mais fortes para sustentar o envolvimento emocional do espectador com os personagens.
+
+Os personagens em si também são um ponto frágil da obra. Eles funcionam mais como peças dentro do mecanismo do enredo do que como indivíduos com profundidade ou conflitos internos bem explorados. Isso é especialmente problemático em um filme de terror, onde a empatia com as vítimas geralmente é fundamental para que o perigo tenha peso real. Sem essa conexão, muitas das ameaças acabam parecendo mais distantes do que deveriam.
+
+Apesar dessas limitações, o filme consegue capturar um tipo específico de desconforto moderno: a sensação de que a tecnologia, que deveria conectar as pessoas, também pode abrir portas para o desconhecido e o perturbador. Esse elemento conceitual é talvez o ponto mais forte da obra, mesmo que a execução não seja totalmente consistente. Há uma tentativa clara de adaptar o terror para um contexto contemporâneo, o que por si só já é um mérito dentro do gênero.
+
+No final, Cuidado com Quem Chama é um filme que funciona melhor como ideia do que como experiência cinematográfica completa. Ele apresenta conceitos interessantes sobre terror digital e isolamento em ambientes virtuais, mas não consegue sustentar plenamente a tensão ou aprofundar seus personagens. Ainda assim, é uma obra que reflete bem uma tendência do horror moderno: transformar a tecnologia em fonte de medo, mesmo quando a execução não acompanha totalmente a ambição.',
+4
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Histórias Assustadoras para Contar no Escuro',
+2019,
+'Histórias Assustadoras para Contar no Escuro é um filme de terror que tenta equilibrar nostalgia, atmosfera infantil sombria e horror de criaturas em uma adaptação de um material literário bastante icônico. O resultado é uma obra que funciona melhor como experiência visual e estética do que como narrativa de terror verdadeiramente consistente ou inovadora. O filme claramente tem consciência de sua origem “juvenil”, e isso influencia diretamente o tom geral, que oscila entre o leve e o perturbador.
+
+Um dos pontos mais fortes do filme está na sua direção de arte e na criação das criaturas. Os monstros apresentados são visualmente criativos e carregam um certo charme macabro, respeitando a identidade das histórias originais ilustradas nos livros. Essa estética dá ao filme uma identidade própria dentro do terror contemporâneo, que muitas vezes depende de fórmulas repetidas. Aqui, há uma tentativa clara de resgatar o terror mais imagético e folclórico, baseado em contos e lendas.
+
+Por outro lado, a narrativa principal, que tenta conectar diferentes histórias em um único arco, nem sempre é tão sólida quanto poderia ser. O filme cria uma trama central envolvendo um grupo de adolescentes e um livro misterioso, mas essa estrutura serve mais como fio condutor do que como algo realmente profundo. Em alguns momentos, a sensação é de que o enredo existe principalmente para ligar episódios de terror, em vez de sustentar um desenvolvimento dramático consistente.
+
+Os personagens também seguem uma construção relativamente convencional do gênero adolescente. Embora haja uma tentativa de dar algum peso emocional às suas relações e medos, a caracterização ainda é limitada, o que reduz o impacto de certas situações de perigo. O filme sugere temas como bullying, trauma familiar e isolamento social, mas não aprofunda totalmente essas questões, preferindo manter o foco no horror episódico das criaturas.
+
+Apesar disso, o ritmo do filme é bem controlado, e a transição entre os diferentes segmentos de terror é feita de forma fluida. Há uma preocupação clara em manter a tensão crescente, mesmo quando algumas histórias individuais variam em qualidade. O clima de “conto de terror contado ao redor da fogueira” é bem preservado, o que ajuda a sustentar a identidade da obra como uma antologia interligada.
+
+No final, Histórias Assustadoras para Contar no Escuro é um filme que se destaca mais pela atmosfera e pelo visual do que pela profundidade narrativa. Ele funciona como uma homenagem ao terror clássico em forma de contos ilustrados, trazendo criaturas memoráveis e uma estética única, mas deixa a sensação de que poderia ter explorado melhor seus personagens e temas. Ainda assim, é uma experiência sólida dentro do terror leve, especialmente para quem aprecia histórias de horror com um toque mais fantasioso e estilizado.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Assim na Terra como no Inferno',
+2014,
+'Assim na Terra como no Inferno é um filme de terror em estilo found footage que tenta unir exploração arqueológica, horror psicológico e mitologia infernal em uma narrativa claustrofóbica ambientada nos subterrâneos de Paris. A premissa é forte: uma equipe desce às catacumbas em busca da Pedra Filosofal, mas acaba encontrando algo muito mais ligado às suas próprias culpas e traumas do que a qualquer tesouro histórico. Apesar disso, o filme nem sempre consegue sustentar a profundidade que sua ideia sugere.
+
+Um dos principais méritos da obra está na ambientação. As catacumbas são naturalmente um cenário perfeito para o terror, e o filme explora bem essa sensação de confinamento, escuridão e desorientação. À medida que os personagens se aprofundam no labirinto subterrâneo, o espaço vai deixando de ser apenas físico e passa a representar também um estado mental de perda de controle. Essa progressão é um dos elementos mais eficazes do filme, criando uma sensação crescente de inevitabilidade.
+
+Por outro lado, o formato found footage é usado de maneira um pouco irregular. Em alguns momentos, ele contribui para a imersão e para a sensação de realismo, mas em outros acaba limitando a fluidez da narrativa e a clareza das cenas. A justificativa constante de manter as câmeras ligadas em situações extremas também exige certa suspensão de descrença, o que pode quebrar parte da tensão para alguns espectadores.
+
+O filme tenta ir além do simples terror físico ao introduzir elementos psicológicos e simbólicos, fazendo com que cada personagem enfrente manifestações de seus próprios traumas e culpas. Essa ideia é interessante e dá ao filme um caráter mais pessoal, mas nem sempre é desenvolvida com a profundidade necessária. Em alguns casos, essas revelações parecem rápidas demais, funcionando mais como “explicações de terror” do que como desenvolvimento emocional gradual.
+
+O aspecto sobrenatural, que mistura inferno, alucinação e julgamento espiritual, é um dos pontos mais ambíguos da obra. O filme nunca se compromete totalmente com uma explicação única, o que pode ser visto tanto como um acerto — ao manter o mistério — quanto como uma limitação — ao deixar partes importantes da lógica interna pouco claras. Essa indefinição contribui para a atmosfera, mas também enfraquece o impacto final.
+
+No fim, Assim na Terra como no Inferno é um filme de terror competente em criar atmosfera e desconforto, especialmente por meio de seu cenário opressor e da sensação de aprisionamento crescente. No entanto, sua execução narrativa e seu uso do found footage acabam sendo inconsistentes, impedindo que a obra alcance um nível mais elevado dentro do gênero. Ainda assim, permanece como uma experiência interessante para quem aprecia terror de exploração e ambientes subterrâneos sufocantes.',
+10
+);
+       
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Bruxa de Blair',
+1999,
+'A Bruxa de Blair de 1999 é um dos filmes mais influentes da história do terror moderno não necessariamente por aquilo que mostra, mas principalmente pelo que sugere. A obra popularizou o formato found footage de forma definitiva e mostrou como o horror pode ser construído quase inteiramente a partir da ausência de respostas. No entanto, essa mesma abordagem minimalista também abre espaço para críticas importantes sobre sua execução e seu impacto real além da proposta conceitual.
+
+Um dos principais méritos do filme está na forma como ele constrói autenticidade. A ideia de acompanhar três jovens desaparecidos através de uma gravação supostamente “real” cria uma imersão psicológica muito forte, especialmente considerando o contexto da época em que foi lançado. A sensação de que aquilo poderia ser verdadeiro amplifica o medo, transformando elementos simples — como sons na floresta ou câmeras tremidas — em fontes de tensão constante.
+
+Por outro lado, quando analisado estritamente como narrativa, o filme é extremamente minimalista ao ponto de parecer quase inexistente em alguns momentos. Não há uma progressão tradicional de eventos, nem uma evolução clara do “conflito” além da crescente desorientação dos personagens. Isso pode ser interpretado como uma escolha artística coerente com a proposta, mas também pode ser visto como uma limitação estrutural, já que o filme depende quase totalmente da atmosfera para sustentar o interesse.
+
+Os personagens, apesar de contribuírem para a sensação de realismo, não são desenvolvidos de forma profunda. Eles funcionam mais como veículos para a experiência de medo do que como indivíduos complexos. A dinâmica entre eles é propositalmente naturalista, o que ajuda na imersão, mas ao mesmo tempo reduz o impacto emocional do desaparecimento deles, já que o espectador não tem tempo suficiente para construir uma conexão mais forte.
+
+O terror em si é altamente indireto. O filme quase nunca mostra a ameaça de forma explícita, o que reforça a ideia de que o desconhecido é mais assustador do que qualquer representação concreta. Esse recurso é extremamente eficaz em muitos momentos, mas também pode gerar frustração em espectadores que esperam algum tipo de revelação ou resolução mais clara ao final. A ausência de respostas é, ao mesmo tempo, sua maior força e sua maior limitação.
+
+No fim, A Bruxa de Blair é menos um filme de terror tradicional e mais uma experiência de sugestão e construção de atmosfera. Ele redefiniu o gênero ao mostrar que o medo pode nascer da simplicidade e da imaginação do espectador, mas também deixa claro que esse tipo de abordagem tem um custo narrativo. É uma obra historicamente importante, eficaz como experimento de terror, mas deliberadamente incompleta como narrativa convencional.',
+6
+);
+  
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Hora do Mal',
+2025,
+'A Hora do Mal (Weapons) é um filme de terror e suspense que se destaca imediatamente por fugir da estrutura tradicional do gênero. Em vez de depender apenas de sustos ou de uma ameaça claramente definida desde o início, o filme constrói seu horror a partir do mistério coletivo e da sensação de que algo profundamente errado aconteceu dentro de uma comunidade inteira. O desaparecimento simultâneo de crianças cria não apenas um enigma narrativo, mas também um peso psicológico constante que afeta todos os personagens envolvidos.
+
+Um dos pontos mais fortes do filme é justamente a forma como ele trabalha a perspectiva fragmentada dos eventos. A narrativa não se limita a um único ponto de vista, mas se espalha entre diferentes personagens e momentos, criando uma sensação de quebra e reconstrução constante da história. Isso faz com que o espectador nunca tenha total certeza sobre o que está acontecendo, o que aumenta a tensão e reforça o tema central de desconfiança e paranoia coletiva.
+
+Ao mesmo tempo, o filme se beneficia muito do seu tom ambíguo. Ele evita explicar cedo demais as causas do desaparecimento, e essa recusa em entregar respostas imediatas é o que sustenta boa parte do interesse. No entanto, essa mesma escolha pode gerar uma certa irregularidade no ritmo, já que algumas sequências parecem propositalmente mais lentas ou desconectadas, servindo mais para construção de atmosfera do que para avanço direto da trama.
+
+Os personagens são outro ponto interessante, mas também desigual. Alguns recebem desenvolvimento suficiente para gerar empatia e impacto emocional, enquanto outros funcionam mais como peças dentro do quebra-cabeça narrativo. Ainda assim, o filme consegue manter um núcleo emocional forte o bastante para sustentar o peso da história, especialmente ao explorar o impacto psicológico do desaparecimento nas pessoas que ficaram.
+
+Visualmente e tecnicamente, o filme é muito sólido. A direção de Zach Cregger aposta em enquadramentos que muitas vezes escondem mais do que mostram, criando tensão através do fora de campo e do silêncio. A sensação de desconforto não vem apenas do que é visto, mas do que é sugerido, o que é um dos maiores acertos do filme dentro do terror moderno. Essa abordagem reforça a ideia de que o desconhecido é mais assustador do que qualquer explicação direta.
+
+No fim, A Hora do Mal funciona como um terror de construção e desconforto mais do que de resolução. É um filme que aposta na curiosidade e na inquietação do espectador, entregando uma experiência que se sustenta na dúvida e na atmosfera. Ainda que não seja totalmente uniforme em ritmo ou desenvolvimento de personagens, ele se destaca como uma das propostas mais interessantes do terror recente justamente por não tratar seu mistério como algo simples de ser resolvido, mas como algo que vai corroendo a própria percepção da realidade.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Parque do Inferno',
+2018,
+'Parque do Inferno é um filme de terror que tenta aproveitar a estética de parques de diversão como cenário para um massacre em larga escala, mas acaba ficando muito mais próximo de um exercício de fórmula do gênero do que de uma obra realmente impactante. A ideia de transformar um ambiente associado à alegria e ao entretenimento em um espaço de violência já nasce com potencial simbólico interessante, mas o filme não explora isso de maneira mais profunda ou subversiva.
+
+Um dos principais problemas da obra é a falta de identidade narrativa. O filme se estrutura como um slasher convencional, em que um grupo de personagens jovens entra em um espaço isolado e passa a ser eliminado um a um por uma figura mascarada. Essa estrutura já é bastante conhecida, e aqui ela não recebe grandes variações ou elementos que a tornem mais envolvente. O resultado é uma progressão previsível, que raramente surpreende o espectador.
+
+Os personagens são outro ponto fraco evidente. Eles não recebem desenvolvimento suficiente para que suas mortes tenham impacto emocional real, funcionando mais como peças descartáveis dentro da lógica do terror. Isso reduz a tensão, já que o público não cria vínculos fortes com o grupo, tornando as ameaças mais mecânicas do que angustiantes.
+
+Por outro lado, o filme tenta compensar essa limitação com ambientação e estética. O parque de diversões abandonado é visualmente interessante e oferece algumas oportunidades para cenas de perseguição criativas. Luzes apagadas, brinquedos parados e espaços vazios ajudam a criar uma atmosfera de desconforto, mesmo que essa atmosfera não seja totalmente aproveitada em termos narrativos.
+
+O vilão mascarado também segue uma linha bastante genérica dentro do terror moderno. Sua motivação e presença não são exploradas com profundidade, o que o torna mais uma figura de função do que um antagonista memorável. Isso enfraquece o impacto geral do filme, já que um bom slasher depende muito de um antagonista forte e marcante para sustentar a tensão.
+
+No final, Parque do Inferno é um filme que entrega exatamente o que promete em termos superficiais — um terror em parque de diversões com mortes e perseguições —, mas não vai muito além disso. Ele funciona como entretenimento rápido para quem gosta do gênero, mas não se destaca nem pela originalidade nem pela construção de atmosfera mais elaborada, ficando preso em uma execução segura e pouco inspirada.',
+8
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Noites Brutais',
+2022,
+'Noites Brutais é um filme de terror que se destaca principalmente por começar como uma história relativamente simples e ir se transformando, aos poucos, em algo muito mais complexo, desconfortável e imprevisível. O ponto de partida — uma casa alugada em uma vizinhança estranha — já cria uma sensação de desconfiança, mas o filme não se limita ao “terror de invasão” convencional. Ele subverte expectativas constantemente, o que é um dos seus maiores méritos.
+
+Um dos aspectos mais fortes do filme é a forma como ele trabalha a estrutura narrativa. Em vez de seguir uma linha reta, a história muda de perspectiva e de tom no meio do caminho, revelando que o que parecia ser o centro da trama era apenas uma camada de algo muito maior e mais perturbador. Essa quebra de expectativa não é apenas um truque narrativo, mas uma forma de reorganizar completamente a percepção do espectador sobre os personagens e o próprio gênero.
+
+O filme também se destaca pela maneira como constrói desconforto sem depender exclusivamente de sustos tradicionais. Há uma sensação constante de que algo está fora do lugar, mesmo em cenas aparentemente normais. Essa tensão gradual é mais eficaz do que o choque imediato, porque cria uma atmosfera de inquietação contínua. O horror aqui não vem só do que é mostrado, mas do que é insinuado e posteriormente reinterpretado.
+
+Os personagens, especialmente no início, podem parecer inseridos em um padrão familiar do terror contemporâneo, mas o filme trabalha bem a desconstrução dessas expectativas. À medida que a narrativa avança, suas funções dentro da história mudam, e isso faz com que o espectador revise constantemente sua compreensão sobre quem eles são e qual é o papel de cada um. Essa abordagem dá ao filme uma camada adicional de interesse, mesmo quando ele parece seguir caminhos previsíveis.
+
+Outro ponto importante é a forma como o filme equilibra crítica social e horror. Sem se tornar didático, ele sugere temas como violência estrutural, exploração e trauma intergeracional. Esses elementos não são tratados de forma explícita o tempo todo, mas estão presentes como subtexto, o que torna a experiência mais rica para quem observa além da superfície do terror.
+
+No final, Noites Brutais é um dos exemplos mais interessantes do terror recente justamente por não se acomodar em uma única identidade. Ele começa como um tipo de filme e termina como outro, desestabilizando expectativas do espectador ao longo do caminho. Mesmo com algumas irregularidades de ritmo, é uma obra que se destaca pela criatividade narrativa e pela capacidade de transformar uma premissa simples em algo muito mais perturbador e memorável.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'O Nevoeiro',
+2007,
+'O Nevoeiro, dirigido por Frank Darabont e baseado na obra de Stephen King, é um filme de terror que se destaca menos pelos monstros em si e mais pela forma como constrói o colapso psicológico de um grupo de pessoas presas em um ambiente fechado. A premissa — uma cidade tomada por uma névoa misteriosa cheia de criaturas desconhecidas — poderia facilmente cair em um terror de sobrevivência convencional, mas o filme escolhe focar no comportamento humano diante do medo extremo.
+
+Um dos aspectos mais fortes da obra é justamente essa transformação social dentro do supermercado onde os personagens se abrigam. À medida que a situação externa se torna mais ameaçadora, o verdadeiro conflito passa a surgir entre as próprias pessoas. O medo do desconhecido abre espaço para fanatismo, paranoia e perda completa de racionalidade, mostrando que o perigo mais perigoso não está necessariamente fora, mas dentro do grupo.
+
+A personagem de Mrs. Carmody é um dos elementos mais marcantes do filme. Ela representa a escalada do fanatismo religioso em situações de crise, e sua presença mostra como a ausência de explicações claras pode ser rapidamente preenchida por crenças extremas. O filme constrói essa figura de forma gradual, o que torna sua influência sobre os outros personagens ainda mais plausível e assustadora.
+
+Do ponto de vista do terror externo, as criaturas da névoa funcionam mais como uma ameaça constante e desconhecida do que como o foco principal da narrativa. O filme raramente se apoia apenas no visual dos monstros para gerar medo; em vez disso, usa a incerteza sobre o que existe lá fora para manter a tensão. Quando as criaturas aparecem, elas reforçam o horror, mas não substituem o verdadeiro núcleo da história.
+
+O filme também se destaca pela sua atmosfera opressiva e pela sensação constante de confinamento. Mesmo sendo um espaço relativamente grande, o supermercado se torna uma espécie de prisão psicológica, onde as decisões são tomadas sob pressão extrema e sem informações suficientes. Essa sensação de isolamento contribui fortemente para o impacto emocional da obra.
+
+No final, O Nevoeiro é um filme que usa o terror como ferramenta para discutir o comportamento humano em situações de colapso. Mais do que uma história de criaturas em uma névoa misteriosa, ele é um estudo sobre medo, crença e desespero coletivo. Seu desfecho, em especial, reforça a ideia de que decisões tomadas sob extrema incerteza podem ter consequências irreversíveis, tornando o filme ainda mais perturbador do que seu próprio cenário monstruoso.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Tusk: A Transformação',
+2014,
+'Tusk – A Transformação é um filme que se posiciona em um território bastante incomum dentro do terror: ele mistura horror corporal extremo com um tom quase absurdo, o que cria uma experiência desconfortável não só pelo conteúdo, mas também pelo contraste entre o grotesco e o bizarro. A premissa — um homem sendo lentamente transformado em uma criatura semelhante a uma morsa — já deixa claro que o filme não busca sutileza, mas sim impacto e choque.
+
+Um dos aspectos mais interessantes da obra é a forma como ela começa de maneira relativamente leve e até levemente cômica, para depois mergulhar em um horror corporal cada vez mais intenso. Essa transição abrupta de tom é uma das marcas mais fortes do filme, mas também um dos pontos mais controversos, já que nem todos os espectadores aceitam bem essa mudança entre humor e terror extremo. Essa oscilação cria uma sensação de desconforto adicional, porque o espectador nunca sabe exatamente como deve reagir.
+
+O vilão Howard Howe é um dos elementos mais importantes da narrativa. Ele não é apenas um antagonista físico, mas também um personagem movido por obsessão, solidão e uma visão distorcida de humanidade. Suas justificativas para transformar o protagonista em uma “morsa” revelam um tipo de loucura filosófica, que mistura trauma, necessidade de controle e uma tentativa distorcida de recriar conexões humanas. Isso dá ao filme uma camada psicológica que vai além do simples choque visual.
+
+Por outro lado, o desenvolvimento dos personagens e da própria trama pode parecer secundário diante da proposta principal do filme. A narrativa serve principalmente como estrutura para sustentar a transformação física gradual do protagonista, e isso faz com que algumas decisões de roteiro pareçam menos preocupadas com coerência e mais focadas em alcançar o efeito de horror corporal. Essa escolha pode ser vista tanto como liberdade criativa quanto como limitação narrativa.
+
+O horror corporal em Tusk é o elemento mais marcante e também o mais difícil de ignorar. O filme não economiza na ideia de perda total da identidade humana, explorando a transformação física como uma forma de destruição psicológica completa. Esse tipo de terror não depende de sustos, mas de desconforto progressivo, o que torna a experiência mais duradoura na memória do espectador, mesmo quando a narrativa não é tão forte.
+
+No final, Tusk é um filme polarizador, que funciona quase como uma experiência de terror experimental dentro do cinema mainstream. Ele não busca agradar amplamente nem seguir fórmulas tradicionais, e isso o torna único, mas também inconsistente. É uma obra que se destaca mais pela sua ideia central e pelo impacto visual do que por sua construção narrativa, deixando uma impressão forte, porém bastante dividida.',
+8
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Não Solte!',
+2024,
+'Não Solte!, é um filme de terror psicológico que aposta mais na atmosfera de paranoia familiar do que em sustos tradicionais. A premissa já nasce forte: uma mãe vive isolada com seus filhos, convencida de que existe um mal no mundo externo, obrigando-os a permanecerem sempre conectados fisicamente e emocionalmente dentro de um ambiente controlado. O filme constrói, desde o início, uma sensação de confinamento que é tanto físico quanto mental.
+
+Um dos pontos mais interessantes da obra é justamente essa ambiguidade entre proteção e controle. A mãe não é apresentada apenas como uma figura protetora, mas também como alguém cuja visão do mundo pode estar profundamente distorcida. Isso cria um conflito constante entre o instinto de sobrevivência e a dúvida sobre o que é real, transformando o ambiente doméstico em um espaço de tensão psicológica permanente.
+
+O filme se destaca quando trabalha a ideia de crença como ferramenta de controle. As regras impostas pela mãe — como nunca se soltar ou sair sem proteção — funcionam quase como um sistema fechado de pensamento, onde questionar significa colocar tudo em risco. Esse aspecto dá ao filme uma camada mais interessante de leitura, aproximando-o de um terror mais simbólico do que apenas físico.
+
+Por outro lado, o ritmo da narrativa é irregular em alguns momentos. O filme alterna entre construção lenta de atmosfera e picos de tensão mais abruptos, o que nem sempre resulta em uma progressão fluida. Em certos trechos, a repetição das regras e dinâmicas familiares acaba reduzindo um pouco o impacto do mistério central.
+
+Os elementos sobrenaturais são tratados de forma ambígua, o que pode ser visto tanto como força quanto como limitação. A ausência de explicações claras ajuda a manter o clima de incerteza, mas também pode deixar parte do público com a sensação de que o filme evita se comprometer totalmente com uma interpretação mais definida do horror que apresenta.
+
+No final, Não Solte! funciona melhor como um estudo sobre medo, controle e percepção da realidade do que como um terror convencional de criaturas ou sustos. É um filme que aposta na dúvida e na instabilidade emocional dos personagens para construir sua tensão, e embora não seja totalmente consistente em ritmo, se destaca pela forma como transforma o vínculo familiar em algo potencialmente sufocante e ameaçador.',
+8
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Linha da Extinção',
+2024,
+'A Linha da Extinção (Elevation), é um filme pós-apocalíptico que tenta combinar ação, sobrevivência e drama humano em um cenário onde a humanidade vive isolada em áreas elevadas devido a criaturas que dominam as regiões mais baixas do planeta. A premissa é forte e imediata, criando um mundo que já nasce com regras claras de sobrevivência e uma sensação constante de ameaça invisível.
+
+Um dos pontos mais interessantes do filme é justamente essa construção do mundo dividido por altitude. A ideia de que “descer” significa morte cria uma metáfora direta sobre limites, medo e adaptação, além de funcionar bem como mecanismo de tensão constante. O ambiente elevado também reforça a sensação de isolamento, fazendo com que cada deslocamento dos personagens pareça um risco calculado.
+
+No entanto, o filme não explora todo o potencial da sua própria premissa. Apesar de ter um conceito visual e narrativo forte, ele acaba priorizando uma estrutura de ação relativamente convencional, com progressão previsível e foco em objetivos diretos. Isso faz com que o universo apresentado pareça maior do que a própria história consegue comportar.
+
+Os personagens seguem uma linha funcional dentro do gênero, com motivações claras, mas pouco aprofundadas. O protagonista carrega um drama pessoal que tenta sustentar o peso emocional da narrativa, mas esse elemento nem sempre recebe espaço suficiente para se desenvolver de forma mais impactante. Assim, o filme depende mais do contexto externo do que de conflitos internos bem trabalhados.
+
+Os momentos de ação são competentes, mas não especialmente marcantes. O filme aposta mais em tensão de ambiente do que em sequências realmente inovadoras, o que mantém a história funcionando, mas sem grandes picos de originalidade. A ameaça das criaturas também é mantida de forma relativamente genérica, servindo mais como força constante do mundo do que como elemento narrativo aprofundado.
+
+No final, A Linha da Extinção é um filme que se apoia muito mais na força da sua ideia inicial do que na execução completa dela. Ele entrega um mundo interessante e funcional dentro do pós-apocalipse, mas não consegue transformar esse potencial em algo realmente memorável ou inovador. Ainda assim, funciona como entretenimento sólido para quem gosta de histórias de sobrevivência com uma premissa diferenciada.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Sinais',
+2002,
+'Sinais é um filme que se apoia menos na ideia de invasão alienígena e mais na construção de uma tensão psicológica baseada em fé, perda e coincidência. À primeira vista, parece uma história sobre agricultura e extraterrestres, mas o filme rapidamente revela que seu verdadeiro foco está na fragilidade emocional de um homem que perdeu a fé e tenta reorganizar sua vida após uma tragédia pessoal.
+
+Um dos pontos mais fortes do filme é justamente como ele transforma o cotidiano em algo inquietante. A fazenda isolada, os sons ao fundo, os sinais misteriosos nos campos e até pequenas interferências em transmissões criam uma sensação constante de que algo está prestes a acontecer. O terror aqui não depende tanto da presença dos alienígenas, mas da expectativa construída ao redor deles.
+
+O protagonista, Graham Hess, é o centro emocional da narrativa, e sua crise de fé é o que dá profundidade ao filme. A invasão alienígena funciona quase como um espelho externo para o caos interno dele. Esse paralelo entre evento global e trauma pessoal é um dos elementos mais interessantes da obra, ainda que nem sempre explorado com sutileza em todas as suas camadas.
+
+Por outro lado, o filme pode ser criticado por seu ritmo bastante controlado e, em alguns momentos, até lento. A construção de tensão é deliberada, mas pode parecer repetitiva para quem espera uma ficção científica mais ativa. O filme prefere insinuar do que mostrar, o que fortalece o suspense, mas também limita a ação direta.
+
+Os alienígenas em si são tratados de forma contida, aparecendo de maneira breve e quase sempre parcial. Essa escolha reforça a ideia de desconhecido e medo do invisível, mas também pode gerar certa frustração em quem espera uma revelação mais clara ou um confronto mais intenso. O terror, aqui, está mais na sugestão do que na exposição.
+
+No final, Sinais é um filme que funciona muito mais como drama espiritual disfarçado de invasão alienígena do que como ficção científica tradicional. Ele usa o gênero como ferramenta para discutir fé, destino e coincidência, entregando uma experiência mais reflexiva do que espetacular. Mesmo com suas limitações de ritmo, continua sendo uma das obras mais marcantes da fase inicial de Shyamalan por sua capacidade de transformar o simples em algo inquietante.',
+7
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Campo do Medo',
+2019,
+'Campo do Medo, dirigido por Vincenzo Natali e baseado em um conto de Stephen King e Joe Hill, é um filme que transforma um cenário aparentemente comum em uma experiência angustiante e surreal. A ideia de um campo de grama alta do qual ninguém consegue escapar é simples, mas extremamente eficaz, pois explora um medo universal: perder completamente o senso de direção e controle. Desde os primeiros minutos, o longa estabelece uma atmosfera de inquietação que desperta a curiosidade do espectador.
+
+Um dos maiores méritos do filme é a forma como utiliza o espaço como principal elemento de horror. O campo deixa de ser apenas um ambiente natural e passa a obedecer regras próprias, desafiando a lógica e a percepção dos personagens. Essa quebra da realidade cria uma sensação constante de desorientação, fazendo com que o espectador compartilhe da mesma insegurança vivida pelos protagonistas.
+
+Por outro lado, a narrativa nem sempre consegue acompanhar a força de sua premissa. À medida que novos mistérios surgem, o roteiro se torna cada vez mais complexo e abstrato, introduzindo conceitos que nem sempre recebem um desenvolvimento satisfatório. Em alguns momentos, o excesso de ambiguidades faz com que a história pareça mais confusa do que intrigante, prejudicando o impacto de algumas revelações.
+
+As atuações cumprem bem o papel de transmitir o desespero crescente dos personagens, especialmente diante da impossibilidade de compreender o que está acontecendo. O filme também trabalha temas como culpa, destino e livre-arbítrio, sugerindo que o verdadeiro terror não está apenas no ambiente sobrenatural, mas nas decisões e consequências que acompanham cada personagem. No entanto, essas ideias poderiam ter sido exploradas com maior profundidade.
+
+Visualmente, Campo do Medo é bastante competente. Apesar de se passar quase inteiramente no mesmo cenário, a direção consegue evitar a monotonia ao brincar com enquadramentos, sons e mudanças sutis na paisagem. O campo transmite uma sensação constante de opressão, provando que um único ambiente pode ser suficiente para sustentar um filme de terror quando utilizado de maneira criativa.
+
+No geral, Campo do Medo é uma obra que se destaca muito mais pela atmosfera e pela originalidade de sua proposta do que pela execução de sua narrativa. Embora o roteiro apresente algumas inconsistências e deixe perguntas sem resposta, o filme consegue entregar uma experiência inquietante e diferente da maioria dos terrores convencionais. Para quem aprecia histórias que misturam suspense psicológico, elementos sobrenaturais e simbolismos, é um filme que merece ser visto, mesmo sem alcançar todo o potencial de sua excelente premissa.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Visita',
+2015,
+'A Visita, dirigido por M. Night Shyamalan, representa um dos momentos mais importantes da retomada da carreira do diretor. Após uma sequência de filmes que dividiram público e crítica, Shyamalan voltou a demonstrar sua habilidade em construir suspense com poucos recursos, apostando em uma narrativa simples, mas extremamente eficiente. O filme prova que não é preciso depender de grandes efeitos visuais ou orçamentos milionários para criar uma experiência genuinamente inquietante.
+
+O maior acerto da obra está na forma como transforma situações aparentemente comuns em momentos de profundo desconforto. Os avós, que inicialmente parecem apenas pessoas excêntricas, tornam-se gradualmente figuras cada vez mais imprevisíveis. Essa mudança acontece de maneira natural, fazendo com que o espectador compartilhe da mesma sensação de estranheza vivida pelos protagonistas. O terror nasce da dúvida constante sobre até onde aquele comportamento é apenas excentricidade ou representa uma ameaça real.
+
+Outro ponto positivo é o equilíbrio entre suspense e humor. Em diversos momentos, o filme utiliza o carisma dos dois irmãos para aliviar a tensão sem comprometer a atmosfera. Esse contraste torna os momentos de horror ainda mais eficazes, pois o espectador nunca sabe exatamente quando a narrativa irá mudar de tom. É uma combinação difícil de executar, mas que funciona surpreendentemente bem durante boa parte da história.
+
+Apesar disso, o uso do formato found footage nem sempre convence. Embora a justificativa para as gravações faça sentido dentro da narrativa, existem momentos em que a insistência dos personagens em continuar filmando soa pouco natural. Esse recurso contribui para a imersão em algumas cenas, mas também pode quebrar a credibilidade em outras, sendo um dos poucos aspectos que envelheceram menos bem com o passar dos anos.
+
+O roteiro também merece destaque por construir um mistério envolvente sem depender exclusivamente da famosa "reviravolta" característica de Shyamalan. Embora exista uma revelação importante na reta final, ela funciona porque foi cuidadosamente preparada ao longo da narrativa, e não apenas como um choque gratuito. Quando a verdade finalmente vem à tona, muitos dos comportamentos estranhos apresentados anteriormente passam a fazer sentido, recompensando a atenção do espectador.
+
+No geral, A Visita é um dos melhores filmes de suspense da carreira de M. Night Shyamalan e um excelente exemplo de como a simplicidade pode ser mais eficaz do que o excesso. Com uma atmosfera crescente de tensão, personagens cativantes e uma direção segura, o filme entrega uma experiência inquietante do começo ao fim. Mesmo apresentando pequenas limitações, é uma obra que consegue prender a atenção e reafirma o talento do diretor para construir suspense psicológico através do desconhecido e da expectativa.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Viagem Maldita',
+2006,
+'Viagem Maldita (2006), dirigido por Alexandre Aja, é um remake que consegue alcançar algo raro: não apenas respeitar a essência do filme original de 1977, mas também intensificar seu impacto através de uma abordagem mais brutal e visceral. O longa abandona qualquer preocupação em suavizar a violência e entrega uma experiência angustiante, na qual o horror nasce tanto da ameaça física quanto da completa sensação de vulnerabilidade dos protagonistas.
+
+Um dos maiores acertos do filme é a construção da tensão. A família Carter é apresentada de forma simples, mas suficiente para que o espectador compreenda suas relações e se importe com seu destino. Quando eles ficam presos em uma região desértica e isolada, a narrativa explora muito bem o medo do desconhecido e a ausência de qualquer possibilidade de ajuda. O isolamento transforma o deserto em um personagem tão ameaçador quanto os próprios antagonistas.
+
+Os mutantes, por sua vez, são retratados de maneira extremamente perturbadora. Mais do que simples monstros, eles representam o resultado da degradação humana causada por testes nucleares e pelo abandono. O filme evita tratá-los apenas como assassinos sem motivação, sugerindo uma crítica à negligência governamental e às consequências de experimentos realizados sem considerar seus impactos sobre as pessoas. Essa camada simbólica não domina a narrativa, mas acrescenta profundidade ao conflito.
+
+A direção de Alexandre Aja também merece destaque pela forma como utiliza a violência. As cenas mais brutais não existem apenas para chocar gratuitamente; elas servem para transmitir a crueldade do ambiente e reforçar que ninguém está realmente seguro. O diretor consegue equilibrar momentos de tensão silenciosa com explosões repentinas de violência, mantendo o espectador constantemente em estado de alerta.
+
+Apesar de seus muitos acertos, o filme apresenta alguns personagens secundários pouco desenvolvidos e recorre a certos clichês característicos do terror dos anos 2000. Algumas decisões tomadas pelos protagonistas também podem parecer questionáveis, funcionando mais para movimentar a trama do que por coerência. Ainda assim, esses aspectos não comprometem significativamente a experiência, já que o ritmo intenso faz com que a narrativa dificilmente perca força.
+
+No geral, Viagem Maldita é um dos remakes mais bem-sucedidos do cinema de terror moderno. Com uma atmosfera sufocante, cenas memoráveis e uma direção que sabe explorar tanto o suspense quanto o horror explícito, o filme permanece como uma referência do gênero. É uma obra violenta e desconfortável, mas que utiliza esses elementos para construir uma experiência de sobrevivência intensa e marcante, em vez de depender apenas do choque visual.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'À Espreita do Mal',
+2019,
+'À Espreita do Mal (I See You), é um suspense que demonstra como uma boa narrativa pode ser muito mais eficiente do que grandes cenas de ação ou terror explícito. O filme começa dando a impressão de seguir uma fórmula relativamente conhecida: uma pequena cidade é abalada pelo desaparecimento de um garoto enquanto uma família enfrenta acontecimentos estranhos dentro de casa. No entanto, conforme a história avança, o roteiro revela que sua maior qualidade está justamente em desafiar as expectativas do espectador.
+
+O maior mérito da obra é sua estrutura narrativa. Em vez de entregar respostas de forma linear, o filme reorganiza constantemente a percepção do público, fazendo com que acontecimentos aparentemente sem importância ganhem novos significados. Cada revelação altera a forma como enxergamos os personagens e os eventos anteriores, tornando a experiência muito mais envolvente do que um suspense convencional. É um roteiro que recompensa a atenção do espectador e evita depender apenas de uma única reviravolta.
+
+Outro ponto forte é a atmosfera construída dentro da casa da família Harper. Os objetos que desaparecem, os ruídos inexplicáveis e a constante sensação de que alguém está observando os moradores criam um desconforto genuíno. O filme consegue provocar tensão utilizando elementos simples, sem recorrer exageradamente a sustos fáceis, o que torna o suspense mais psicológico e eficiente.
+
+As atuações também contribuem para o resultado final, especialmente porque todos os personagens carregam segredos e conflitos próprios. Ninguém é completamente inocente ou totalmente confiável, e essa ambiguidade fortalece a narrativa. O filme evita dividir seus personagens entre heróis e vilões absolutos, tornando suas motivações mais humanas e suas decisões mais interessantes.
+
+Apesar de seus muitos acertos, À Espreita do Mal apresenta alguns problemas de ritmo. A primeira metade pode parecer lenta para quem espera um terror mais direto, já que o filme prefere construir mistério antes de oferecer respostas. Além disso, algumas coincidências do roteiro exigem certa suspensão da descrença para que todas as peças do quebra-cabeça se encaixem de maneira satisfatória.
+
+No geral, À Espreita do Mal é um dos suspenses mais inteligentes lançados nos últimos anos. Sua capacidade de manipular a perspectiva do espectador, aliada a uma atmosfera inquietante e a um roteiro cuidadosamente estruturado, faz com que o filme se destaque dentro do gênero. Mesmo apresentando pequenas irregularidades de ritmo, é uma obra que surpreende pela criatividade narrativa e prova que um bom suspense não depende apenas de sustos, mas de uma história capaz de prender a atenção até os minutos finais.',
+6
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Arraste-me para o Inferno',
+2009,
+'Arraste-me para o Inferno é um dos exemplos mais bem-sucedidos de como misturar terror e humor sem comprometer a eficiência de nenhum dos dois. Conhecido por seu estilo exagerado e criativo, Raimi transforma uma história relativamente simples em uma experiência caótica, divertida e, ao mesmo tempo, genuinamente perturbadora. O filme não tenta ser um terror realista, mas abraça o absurdo de sua própria proposta, e é justamente essa confiança em sua identidade que o torna tão memorável.
+
+Um dos maiores acertos da obra é a protagonista, Christine Brown, que se vê amaldiçoada após tomar uma decisão moralmente questionável em seu trabalho. Diferentemente de muitos filmes do gênero, o roteiro evita retratá-la como uma heroína perfeita ou uma vítima completamente inocente. Essa ambiguidade torna o conflito mais interessante, pois o espectador compreende suas motivações, mas também percebe que suas escolhas têm consequências. O filme utiliza essa premissa para discutir culpa, ambição e responsabilidade de forma bastante acessível.
+
+A direção de Sam Raimi é, sem dúvida, o grande destaque do longa. Os movimentos de câmera rápidos, a montagem dinâmica e os efeitos práticos criam uma identidade visual marcante que remete aos seus primeiros trabalhos no terror. Em vez de depender exclusivamente de sustos repentinos, o diretor constrói cenas exageradas, grotescas e até cômicas, fazendo com que o público oscile constantemente entre o riso e o desconforto. Esse equilíbrio é difícil de alcançar, mas o filme o executa com grande naturalidade.
+
+Outro ponto positivo é a forma como o filme utiliza elementos sobrenaturais do folclore para construir sua narrativa. A maldição nunca parece totalmente previsível, e cada nova manifestação da entidade aumenta a sensação de desespero da protagonista. Ao mesmo tempo, o roteiro mantém um ritmo acelerado, evitando longos períodos de exposição e mantendo a tensão praticamente do início ao fim.
+
+Embora funcione muito bem dentro da proposta, Arraste-me para o Inferno pode não agradar quem busca um terror mais sério ou psicológico. Seu humor exagerado, suas situações absurdas e seus efeitos propositalmente caricatos fazem parte da identidade do filme, mas podem quebrar a imersão para parte do público. Ainda assim, essa escolha estilística é coerente com a visão do diretor e diferencia a obra da maioria dos filmes de possessão e maldições lançados na mesma época.
+
+No geral, Arraste-me para o Inferno é um filme que entende perfeitamente o tipo de experiência que deseja oferecer. Sem abrir mão do entretenimento, combina suspense, humor ácido e horror sobrenatural em uma narrativa criativa e cheia de personalidade. Mesmo mais de uma década após seu lançamento, continua sendo uma das obras mais divertidas e inventivas da filmografia de Sam Raimi, provando que o terror pode ser assustador sem perder o senso de diversão.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A Entidade',
+2012,
+'The Entity, conhecido no Brasil como A Entidade ou A Entidade do Mal em alguns lançamentos, é um filme de terror que tenta se apoiar na ideia de uma presença invisível que se alimenta do medo e da vulnerabilidade de suas vítimas. A premissa é relativamente simples, mas o filme tenta transformá-la em algo mais psicológico, sugerindo que a verdadeira ameaça não está apenas na entidade em si, mas na forma como ela afeta a percepção da realidade dos personagens.
+
+Um dos pontos mais consistentes da obra é a construção de atmosfera. O filme trabalha com ambientes escuros, espaços domésticos vazios e momentos de silêncio prolongado para criar uma sensação de insegurança constante. A presença da entidade raramente é mostrada de forma direta, o que reforça a ideia de algo que existe mais na sugestão do que na materialização física.
+
+A protagonista, que vive um processo de instabilidade emocional e traumas pessoais, é usada como eixo central da narrativa. Essa escolha tenta aproximar o horror sobrenatural de um drama psicológico, sugerindo que talvez nem tudo o que está acontecendo seja externo. Essa ambiguidade é interessante, mas nem sempre bem equilibrada, já que o filme oscila entre explicar demais e manter mistério demais.
+
+O terror aqui depende muito de sustos pontuais e manifestações repentinas da entidade, o que pode enfraquecer a construção de tensão em alguns momentos. Em vez de um medo progressivo e constante, o filme alterna entre calma e choque, seguindo uma estrutura mais tradicional de “jump scares”, o que reduz um pouco o impacto psicológico que ele poderia ter explorado com mais profundidade.
+
+Outro ponto que chama atenção é a falta de originalidade em alguns elementos narrativos. A ideia de uma força invisível que persegue uma pessoa fragilizada já foi explorada em diversos outros filmes do gênero, e aqui não há grandes inovações que diferenciem a obra dentro desse tipo de história. Isso faz com que o filme dependa mais da execução de atmosfera do que de uma proposta realmente nova.
+
+No final, A Entidade funciona como um terror funcional, com momentos de tensão bem construídos e uma atmosfera razoavelmente eficaz, mas sem grande profundidade narrativa ou inovação dentro do gênero. É um filme que entrega o básico esperado de uma história de assombração, mas não ultrapassa muito os limites das fórmulas já conhecidas do horror psicológico contemporâneo.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'O Colecionador de Corpos',
+2009,
+'O Colecionador de Corpos é um filme de terror que aposta quase inteiramente em uma experiência de “armadilhas e sobrevivência”, mais do que em desenvolvimento profundo de personagens ou construção narrativa complexa. A premissa é direta: um ex-detento invade uma casa para cometer um roubo, mas descobre que o local já foi transformado em um verdadeiro campo de tortura por um assassino ainda mais violento. A partir daí, o filme se torna um jogo de caça e fuga em tempo real.
+
+Um dos pontos mais fortes da obra é a sua atmosfera claustrofóbica. A casa funciona como um labirinto mortal, repleto de mecanismos brutais e armadilhas criativas que lembram uma versão mais sombria e violenta de filmes de sobrevivência. O espaço é bem utilizado para gerar tensão constante, já que cada cômodo pode significar uma nova ameaça inesperada. Essa sensação de imprevisibilidade sustenta boa parte do impacto do filme.
+
+O antagonista, conhecido como “The Collector”, é um dos elementos centrais da experiência. Ele é construído como uma figura silenciosa, eficiente e quase implacável, o que reforça a sensação de perigo constante. Diferente de vilões mais verbais ou dramáticos, ele funciona mais como uma força de destruição do que como um personagem tradicional, o que contribui para o tom desumanizado do horror.
+
+Por outro lado, os personagens principais são bastante limitados em profundidade. O protagonista não recebe um desenvolvimento psicológico muito elaborado, e suas motivações acabam ficando em segundo plano diante da necessidade de manter o ritmo acelerado de fuga e sobrevivência. Isso faz com que a empatia do espectador seja construída mais pela situação extrema do que pela conexão emocional com os personagens.
+
+O filme também se destaca pelo ritmo intenso. A narrativa praticamente não dá pausas, mantendo uma sequência contínua de tensão e perigo. Isso ajuda a criar uma experiência envolvente, mas também pode tornar o filme um pouco repetitivo em certos momentos, já que a estrutura de “escapar de uma armadilha para cair em outra” se repete ao longo da história.
+
+No final, O Colecionador de Corpos é um terror eficiente dentro da proposta de sobrevivência e armadilhas, com boa execução de tensão e um vilão marcante. Apesar das limitações de roteiro e profundidade de personagens, o filme funciona muito bem como entretenimento visceral e claustrofóbico, sendo um exemplo sólido do subgênero de “casa mortal” dentro do terror moderno.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'IO - O Último na Terra',
+2013,
+'IO – O Último na Terra é um filme de ficção científica pós-apocalíptico que aposta mais na contemplação do que na ação, mostrando uma Terra praticamente abandonada enquanto a humanidade tenta sobreviver fora do planeta. A premissa sugere uma reflexão sobre solidão, responsabilidade ambiental e o futuro da espécie humana, mas o filme escolhe um caminho extremamente minimalista para desenvolver essas ideias.
+
+Um dos pontos mais interessantes da obra é justamente sua atmosfera silenciosa e melancólica. O mundo apresentado é quase vazio, e isso reforça a sensação de isolamento absoluto da protagonista, Sam. A direção aposta em paisagens amplas e cenários abandonados para criar uma estética de fim do mundo que é mais contemplativa do que destrutiva.
+
+Por outro lado, esse minimalismo também é um dos maiores problemas do filme. A narrativa é extremamente contida, com poucos acontecimentos realmente significativos, o que pode fazer a história parecer arrastada. Em vários momentos, o filme parece mais preocupado em transmitir uma sensação do que em desenvolver uma progressão dramática consistente.
+
+A protagonista Sam é o centro emocional da obra, mas sua construção é limitada pelo próprio ritmo do filme. Sua relação com o passado e com a decisão de permanecer na Terra é interessante em teoria, mas não recebe aprofundamento suficiente para gerar um impacto emocional mais forte. Isso faz com que sua jornada pareça mais simbólica do que realmente envolvente.
+
+O filme também tenta levantar questões sobre a sobrevivência da humanidade e a necessidade de adaptação, mas faz isso de forma bastante sutil e pouco desenvolvida. A ausência de conflitos mais claros ou antagonistas diretos reforça o tom reflexivo, mas também reduz a intensidade dramática da história.
+
+No final, IO – O Último na Terra é um filme mais atmosférico do que narrativo. Ele funciona como uma meditação sobre solidão e fim da civilização, mas não entrega uma trama forte o suficiente para sustentar totalmente seu tempo de execução. É uma obra interessante para quem gosta de ficção científica lenta e contemplativa, mas pode parecer pouco envolvente para quem espera uma história mais dinâmica ou emocionalmente intensa.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+ 'A Órfã',
+2009,
+'A Órfã, é um suspense psicológico que se destaca por transformar uma premissa aparentemente simples em uma narrativa cada vez mais perturbadora. O filme parte da adoção de uma menina por uma família em luto, mas rapidamente demonstra que seu verdadeiro foco não está apenas no terror, e sim na manipulação, na desconfiança e na deterioração das relações familiares. O resultado é uma obra que prende a atenção do início ao fim, sustentada por uma atmosfera de tensão crescente.
+
+Um dos maiores méritos do filme é a construção da personagem Esther. Interpretada por Isabelle Fuhrman, ela transmite uma mistura inquietante de inocência e perversidade, tornando impossível prever suas próximas atitudes. A atuação é o grande destaque do longa, pois consegue convencer tanto nos momentos em que a personagem parece apenas uma criança vulnerável quanto nas cenas em que revela sua verdadeira natureza. Essa dualidade faz de Esther uma das antagonistas mais memoráveis do terror contemporâneo.
+
+O roteiro também merece elogios por desenvolver o suspense de maneira gradual. Em vez de recorrer constantemente a sustos fáceis, o filme investe na manipulação psicológica e na crescente paranoia da protagonista, Kate. A cada novo acontecimento, a sensação de que algo está profundamente errado aumenta, enquanto os conflitos familiares dificultam que a verdade seja percebida pelos demais personagens. Essa construção torna a tensão muito mais eficaz do que uma sequência de cenas de violência explícita.
+
+Apesar dos muitos acertos, o filme apresenta alguns momentos em que exige certa suspensão da descrença. Algumas decisões tomadas pelos personagens parecem existir mais para manter o mistério do que por serem completamente coerentes com a situação apresentada. Ainda assim, esses pequenos problemas dificilmente comprometem a experiência, já que o roteiro consegue manter o interesse do espectador através de um ritmo consistente e de uma atmosfera cada vez mais sufocante.
+
+A famosa reviravolta do terceiro ato continua sendo um dos aspectos mais marcantes da obra. Diferentemente de muitos filmes que utilizam um plot twist apenas para surpreender, A Órfã prepara cuidadosamente essa revelação ao longo da narrativa. Quando a verdade finalmente é revelada, diversos comportamentos da personagem passam a fazer sentido, incentivando até mesmo uma revisão do filme para perceber pistas que antes pareciam insignificantes.
+
+No geral, A Órfã é um excelente suspense psicológico que combina boas atuações, direção segura e um roteiro capaz de manter a tensão do começo ao fim. Embora apresente algumas conveniências narrativas, o filme compensa essas limitações com uma antagonista inesquecível e uma reviravolta que marcou o gênero. Mais do que um terror convencional, é uma obra sobre manipulação, aparência e confiança, permanecendo como um dos filmes mais memoráveis de sua época.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Round 6 (temporada 1)',
+2021,
+'Round 6 – 1ª temporada, tornou-se um fenômeno mundial não apenas pela violência de seus jogos, mas pela crítica social que sustenta toda a narrativa. A série utiliza brincadeiras infantis como cenário para uma competição mortal, mas seu verdadeiro interesse está em discutir desigualdade, exploração econômica e os limites morais das pessoas quando a sobrevivência e o dinheiro se tornam as únicas prioridades. Essa combinação entre entretenimento e reflexão é o principal motivo de seu enorme sucesso.
+
+O maior mérito da temporada está na construção de seus personagens. Cada competidor possui motivações claras e conflitos próprios, fazendo com que o público compreenda suas escolhas, mesmo quando elas são moralmente questionáveis. O protagonista Lee Jung-jae, interpretando Seong Gi-hun, entrega uma atuação convincente ao retratar um homem comum, cheio de falhas, que tenta preservar sua humanidade em um ambiente onde a compaixão parece ser uma fraqueza. Os personagens secundários também recebem espaço suficiente para que suas histórias tenham peso emocional, tornando as eliminações muito mais impactantes.
+
+Outro grande destaque é a forma como a direção transforma cenários coloridos e inspirados em parques infantis em locais de extrema brutalidade. Esse contraste entre a inocência das brincadeiras e a violência das consequências cria uma identidade visual marcante e reforça a crítica da série: por trás de uma aparência organizada e divertida existe um sistema cruel que trata vidas humanas como entretenimento para uma elite privilegiada. A fotografia, os figurinos e a trilha sonora trabalham em perfeita sintonia para fortalecer essa sensação.
+
+Apesar de suas inúmeras qualidades, a temporada apresenta algumas irregularidades. Em determinados momentos, o ritmo desacelera para explicar aspectos da organização dos jogos que acabam não sendo tão relevantes quanto os conflitos dos próprios participantes. Além disso, alguns personagens secundários recebem menos desenvolvimento do que mereciam, fazendo com que certos acontecimentos tenham um impacto menor do que poderiam.
+
+Outro ponto frequentemente criticado é o arco dos VIPs. A intenção de representar a elite responsável pelos jogos é coerente com a proposta da série, mas a execução acaba sendo simplista em comparação ao restante da narrativa. Os diálogos artificiais e a caracterização exagerada desses personagens contrastam com o realismo emocional presente nos competidores, tornando essa parte uma das mais fracas da temporada.
+
+No geral, a primeira temporada de Round 6 é uma das produções mais marcantes da televisão contemporânea. Ela combina suspense, drama e crítica social de forma extremamente eficiente, utilizando os jogos apenas como ferramenta para discutir ganância, desigualdade e natureza humana. Mesmo com pequenas falhas de ritmo e alguns personagens menos inspirados, a temporada entrega uma narrativa envolvente, emocionalmente poderosa e visualmente inesquecível, justificando plenamente o reconhecimento internacional que recebeu.',
+10
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'O Dia Depois de Amanhã',
+2004,
+'O Dia Depois de Amanhã é um dos filmes-catástrofe mais marcantes dos anos 2000, combinando espetáculo visual com uma mensagem sobre as consequências das mudanças climáticas. Embora a ciência apresentada seja frequentemente exagerada para fins dramáticos, o filme consegue transformar um tema complexo em uma narrativa acessível e envolvente, equilibrando grandes cenas de destruição com conflitos humanos mais intimistas.
+
+O maior destaque da obra está na maneira como constrói a sensação de escala. Tempestades gigantescas, tsunamis e o congelamento repentino de cidades inteiras criam imagens impressionantes que continuam impactantes mesmo anos após o lançamento. Roland Emmerich demonstra domínio na direção de grandes sequências de desastre, fazendo com que a destruição nunca pareça gratuita, mas parte de um colapso global que afeta milhões de pessoas.
+
+Entretanto, o roteiro nem sempre acompanha a qualidade do espetáculo visual. Diversas situações desafiam a lógica científica e simplificam processos climáticos extremamente complexos para acelerar a narrativa. Embora essa liberdade criativa seja comum no gênero, ela pode comprometer a credibilidade da história para espectadores que esperam uma abordagem mais realista dos eventos apresentados.
+
+Ainda assim, o filme acerta ao manter o foco na relação entre o climatologista Jack Hall e seu filho Sam. Enquanto o mundo entra em colapso, a narrativa encontra espaço para desenvolver temas como sacrifício, responsabilidade e perseverança. Essa dimensão emocional impede que o longa se torne apenas uma sequência de efeitos especiais, dando ao público personagens pelos quais vale a pena torcer.
+
+Outro mérito do filme é sua capacidade de provocar reflexão sobre a relação da humanidade com o meio ambiente. Mesmo utilizando uma abordagem exagerada, a obra chama atenção para os riscos da negligência ambiental e para a necessidade de cooperação internacional diante de crises globais. Essa mensagem permanece relevante, principalmente porque as discussões sobre mudanças climáticas se tornaram ainda mais presentes nas últimas décadas.
+
+No geral, O Dia Depois de Amanhã é um excelente representante do cinema-catástrofe moderno. Apesar de sacrificar parte da precisão científica em favor do entretenimento, o filme entrega cenas memoráveis, um ritmo envolvente e uma mensagem que continua atual. É uma produção que funciona tanto como espetáculo visual quanto como um alerta sobre as possíveis consequências da ação humana sobre o planeta, consolidando-se como um dos títulos mais lembrados do gênero.',
+9
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'A 5ª Onda',
+2016,
+'A 5ª Onda é uma ficção científica que parte de uma premissa extremamente promissora: uma invasão alienígena que não acontece por meio de um ataque direto, mas através de uma sequência de eventos planejados para desestabilizar completamente a humanidade. A ideia das "cinco ondas" cria um conceito interessante e desperta curiosidade logo nos primeiros minutos, mas o filme encontra dificuldades para desenvolver todo o potencial dessa proposta.
+
+O primeiro ato é, sem dúvida, o ponto mais forte da narrativa. A progressão das ondas de destruição transmite uma sensação constante de insegurança, mostrando que o verdadeiro perigo não está apenas nos alienígenas, mas na perda gradual da confiança entre as pessoas. O roteiro consegue criar um clima de paranoia eficiente, onde qualquer indivíduo pode representar uma ameaça, tornando a sobrevivência tão psicológica quanto física.
+
+Entretanto, à medida que a história avança, o filme abandona parte dessa tensão para focar em um romance que recebe mais atenção do que o próprio conflito principal. Embora o relacionamento entre os protagonistas tente humanizar a narrativa, ele acaba prejudicando o ritmo e desviando o foco dos elementos mais interessantes da invasão. Como consequência, a sensação de urgência construída no início perde força em boa parte do segundo ato.
+
+As atuações cumprem bem seus papéis, especialmente a de Chloë Grace Moretz, que consegue transmitir a evolução emocional de Cassie diante de um mundo completamente destruído. No entanto, muitos personagens secundários recebem pouco desenvolvimento, fazendo com que suas decisões e seus conflitos tenham impacto limitado ao longo da história.
+
+Visualmente, A 5ª Onda apresenta uma boa produção, com efeitos especiais competentes e cenas de destruição convincentes. Apesar disso, o filme não explora suficientemente a criatividade de sua própria premissa, preferindo seguir caminhos mais convencionais do gênero. O universo criado parece muito maior do que aquilo que realmente é mostrado, deixando a sensação de que havia espaço para uma narrativa mais ambiciosa e complexa.
+
+No geral, A 5ª Onda é um filme que começa com uma proposta original e envolvente, mas acaba recorrendo a fórmulas já conhecidas da ficção científica voltada ao público jovem. Ainda que apresente boas atuações, efeitos visuais sólidos e momentos de tensão bem construídos, o roteiro não consegue aproveitar plenamente o potencial de seu universo. O resultado é uma obra divertida e competente, mas que deixa a impressão de que poderia ter sido muito mais marcante caso priorizasse sua excelente premissa em vez de seguir caminhos mais previsíveis.',
+7
+);
+
+INSERT INTO resenha (nome, ano, resenha, nota)
+VALUES
+(
+'Jester: A Morte Sorri',
+2023,
+'The Jester é um filme de terror que tenta criar um novo ícone do gênero ao apresentar um assassino silencioso com aparência de bobo da corte. Apostando em uma atmosfera sombria e em uma figura visualmente marcante, o longa demonstra potencial para se destacar entre os slashers contemporâneos. No entanto, embora o conceito seja interessante, a execução nem sempre consegue desenvolver todo o impacto que sua premissa promete.
+
+O maior acerto do filme é, sem dúvida, o próprio Jester. Sua caracterização é inquietante, fugindo da imagem tradicional dos palhaços assassinos ao adotar um visual elegante, mascarado e misterioso. A ausência de diálogos contribui para aumentar sua presença em cena, transformando-o em uma ameaça imprevisível. Sempre que o personagem aparece, o filme ganha intensidade e cria momentos genuínos de tensão.
+
+Por outro lado, o roteiro apresenta dificuldades para aprofundar tanto os personagens quanto a mitologia do antagonista. A história se concentra no drama familiar entre as protagonistas, mas esse conflito recebe um desenvolvimento superficial, fazendo com que algumas decisões pareçam previsíveis ou pouco emocionantes. Da mesma forma, as origens e motivações do Jester permanecem excessivamente vagas, o que aumenta o mistério, mas também deixa a sensação de que faltam explicações para tornar a narrativa mais consistente.
+
+Visualmente, o filme é competente. A fotografia utiliza tons escuros e iluminação contrastante para reforçar a atmosfera de horror, enquanto a direção faz bom uso do silêncio e da expectativa antes dos ataques. Em vez de depender apenas de sustos repentinos, The Jester busca criar desconforto através da presença constante do antagonista, ainda que nem todas as sequências consigam manter o mesmo nível de tensão.
+
+Apesar disso, o longa sofre com um ritmo irregular. Alguns trechos se prolongam mais do que o necessário, enquanto outros acontecimentos importantes são resolvidos rapidamente. Essa falta de equilíbrio impede que a narrativa alcance todo o potencial de seu conceito, fazendo com que o filme pareça mais uma introdução ao personagem do que uma história completa e plenamente desenvolvida.
+
+No geral, The Jester é um terror competente que chama atenção principalmente pela força visual de seu antagonista. Embora apresente limitações no roteiro e no desenvolvimento dos personagens, consegue entregar uma atmosfera inquietante e momentos de suspense eficazes. Não reinventa o gênero slasher, mas demonstra potencial para transformar o Jester em uma figura recorrente caso futuras produções consigam expandir sua mitologia e explorar melhor as possibilidades desse universo.',
+7
+);
