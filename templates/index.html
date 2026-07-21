@@ -16,13 +16,21 @@
     <a href="{{ url_for('adicionar') }}" class="botao">Adicionar Resenha</a>
 
     {% with messages = get_flashed_messages() %}
+
         {% if messages %}
+
             <div class="flash-container">
+
                 {% for message in messages %}
+
                     <div class="flash-message">{{ message }}</div>
+
                 {% endfor %}
+
             </div>
+
         {% endif %}
+
     {% endwith %}
 
     <div class="divisor"></div>
@@ -32,58 +40,113 @@
         <div class="topo-filmes">
 
             <p class="contador-filmes">
-            Você já resenhou <strong>{{ total_filmes }}</strong>
-            filme{% if total_filmes != 1 %}s{% endif %}.
-            </p>
+                Você já resenhou
+                <strong>{{ total_filmes }}</strong>
+                filme{% if total_filmes != 1 %}s{% endif %}.</p>
 
-            <form method="GET"
-                  action="{{ url_for('index') }}"
-                  class="filtro-busca">
+            <form class="filtro-busca" method="GET" action="{{ url_for('index') }}">
 
                 <input
                     type="text"
                     name="busca"
                     placeholder="Pesquisar filme..."
-                    value="{{ busca or '' }}"
-                    autocomplete="off">
+                    value="{{ busca }}"
+                >
 
-                <div class="botoes-pesquisa">
+                <input type="hidden" name="ordem" value="{{ ordem }}">
 
-                    <button type="submit">Buscar</button>
+                <input type="hidden" name="nota" value="{{ nota_minima }}">
 
-                    {% if busca %}
+                <button type="submit">Buscar</button>
 
-                    <a href="{{ url_for('index') }}" class="botao-voltar">Voltar</a>
+                {% if busca or nota_minima or ordem != "recentes" %}
 
-                    {% endif %}
+                    <a href="{{ url_for('index') }}" class="botao-voltar">Limpar filtro</a>
 
-                </div>
+                {% endif %}
 
             </form>
 
-            <form method="GET"
-                  action="{{ url_for('index') }}"
-                  class="filtro-nota">
+            <form class="filtro-nota" method="GET" action="{{ url_for('index') }}">
 
-                <label for="nota">Nota:</label>
+                <input type="hidden" name="busca" value="{{ busca }}">
 
-                <select name="nota" id="nota" onchange="this.form.submit()">
+                <input type="hidden" name="ordem" value="{{ ordem }}">
 
-                    <option value="" {% if not nota_minima %}selected{% endif %}>Todas</option>
+                <label><strong>Nota:</strong></label>
 
-                    {% for i in range(0,10) %}
+                <select name="nota" onchange="this.form.submit()">
+
+                    <option value="" disabled
+
+                    {% if nota_minima is none or nota_minima == "" %}
+
+                        selected
+
+                    {% endif %}
+
+                    >Filtrar nota</option>
+
+                    {% for i in range(0,11) %}
 
                         <option value="{{ i }}"
-                            {% if nota_minima == i|string %}selected{% endif %}>
+
+                        {% if nota_minima == i|string %}
+
+                            selected
+
+                        {% endif %}
+
+                        >
                             {{ i }}
+
                         </option>
 
                     {% endfor %}
 
-                    <option value="10"
-                        {% if nota_minima == "10" %}selected{% endif %}>
-                        10
-                    </option>
+                </select>
+
+            </form>
+
+            <form class="filtro-ordem" method="GET" action="{{ url_for('index') }}">
+
+                <input type="hidden" name="busca" value="{{ busca }}">
+
+                <input type="hidden" name="nota" value="{{ nota_minima }}">
+
+                <label><strong>Ordenar:</strong></label>
+
+                <select name="ordem" onchange="this.form.submit()">
+
+                    <option value="recentes"
+
+                    {% if ordem == "recentes" %}
+
+                        selected
+
+                    {% endif %}
+
+                    >Mais recentes</option>
+
+                    <option value="antigas"
+
+                    {% if ordem == "antigas" %}
+
+                        selected
+
+                    {% endif %}
+
+                    >Mais antigas</option>
+
+                    <option value="alfabetica"
+
+                    {% if ordem == "alfabetica" %}
+
+                        selected
+
+                    {% endif %}
+
+                    >Ordem alfabética</option>
 
                 </select>
 
@@ -93,81 +156,89 @@
 
     </div>
 
-<div class="titulo-faixa">
-    <h2 class="titulo-filmes">Filmes Resenhados</h2>
-</div>
+    <div class="titulo-faixa"><h2 class="titulo-filmes">Filmes Resenhados</h2></div>
 
     {% if nota_minima is not none and nota_minima != "" %}
+
         <p class="contador-nota">
+
             Você já resenhou
             <strong>{{ filmes|length }}</strong>
             filme{% if filmes|length != 1 %}s{% endif %}
-            com a nota <strong>{{ nota_minima }}</strong>.
-            </p>
-        {% endif %}
+            com a nota
+            <strong>{{ nota_minima }}</strong>.</p>
 
-    {% if filmes %}
+    {% endif %}
 
-    <div class="cards">
+{% if filmes %}
 
-        {% for filme in filmes %}
+<div class="cards">
 
-        <div class="card" id="filme-{{ filme.id }}">
+{% for filme in filmes %}
 
-            <div class="card-topo">
+<div class="card" id="filme-{{ filme.id }}">
 
-                <div class="info-filme">
-                    <h2>{{ filme.nome }}</h2>
-                    <span class="ano">{{ filme.ano }}</span>
-                </div>
+    <div class="card-topo">
 
-                <div class="nota nota-{{ filme.nota|int }}">⭐ {{ filme.nota }}/10</div>
+        <div class="info-filme">
 
-            </div>
+            <h2>{{ filme.nome }}</h2>
 
-            <div class="resenha curta" data-resenha>
-{{ filme.resenha }}
-            </div>
-
-            {% if filme.is_long %}
-            <button class="ler-btn" onclick="alternarResenha(this)">Ler mais</button>
-            {% endif %}
-
-            <div class="card-botoes">
-
-                <a href="{{ url_for('editar', id=filme.id) }}"
-                   class="editar">Editar</a>
-
-                <form action="{{ url_for('excluir', id=filme.id) }}"
-                      method="POST">
-
-                    <button type="submit" class="excluir">Excluir</button>
-
-                </form>
-
-            </div>
+            <p class="ano">{{ filme.ano }}</p>
 
         </div>
 
-        {% endfor %}
+        <div class="nota nota-{{ filme.nota|int }}">
+            ⭐ {{ filme.nota }}/10
+        </div>
 
     </div>
 
-    {% else %}
+<div class="resenha {% if filme.is_long %}curta{% endif %}" data-resenha>
 
-        {% if nota_minima %}
+    {{ filme.resenha | replace('\n', '<br>') | safe }}
 
-        {% elif busca %}
+</div>
 
-            <p class="nenhum-filme">Nenhum filme encontrado para sua busca.</p>
+    {% if filme.is_long %}
 
-        {% else %}
-
-            <p class="mensagem">Nenhuma resenha adicionada.</p>
-
-        {% endif %}
+        <button class="ler-btn" onclick="alternarResenha(this)">Ler mais</button>
 
     {% endif %}
+
+<div class="card-rodape">
+
+    <p class="data-criacao">
+        <strong>Criado em:</strong> {{ filme.data_criacao }}</p>
+
+    <div class="card-botoes">
+        <a href="{{ url_for('editar', id=filme.id) }}" class="editar">Editar</a>
+
+        <form action="{{ url_for('excluir', id=filme.id) }}" method="POST">
+            <button type="submit" class="excluir">Excluir</button>
+        </form>
+    </div>
+
+</div>
+    </div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+    {% if busca %}
+
+        <p class="nenhum-filme">Nenhum filme encontrado para sua busca.</p>
+
+    {% elif not nota_minima %}
+
+        <p class="mensagem">Nenhuma resenha adicionada.</p>
+
+    {% endif %}
+
+{% endif %}
 
 </div>
 
@@ -178,7 +249,6 @@ function alternarResenha(botao) {
     const resenha = botao.previousElementSibling;
 
     if (resenha.classList.contains("curta")) {
-
         resenha.classList.remove("curta");
         resenha.classList.add("completa");
 
@@ -190,7 +260,9 @@ function alternarResenha(botao) {
         resenha.classList.add("curta");
 
         botao.textContent = "Ler mais";
+
     }
+
 }
 
 </script>

@@ -32,14 +32,14 @@
     <label>Resenha</label>
     <textarea name="resenha" rows="5" required></textarea>
 
-    <label>Nota (0 a 10)</label>
-    <input
-    type="number"
-    name="nota"
-    min="0"
-    max="10"
-    required
->
+    <label for="nota">Nota</label>
+<select name="nota" id="nota" required>
+    <option value="" selected disabled>Selecione uma nota</option>
+    {% for i in range(0, 11) %}
+        <option value="{{ i }}">{{ i }}</option>
+    {% endfor %}
+</select>
+
     <div class="botoes">
         <button class="botao" type="submit">Salvar</button>
         <a class="cancelar" href="{{ url_for('index') }}">Cancelar</a>
