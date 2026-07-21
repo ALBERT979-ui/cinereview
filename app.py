@@ -8,14 +8,9 @@ from models.resenha_model import (
     excluir_resenha,
     contar_resenhas
 )
-<<<<<<< HEAD
 
 app = Flask(__name__)
-=======
->>>>>>> 1265b6342e0ea193ee5f557e935bddbf63b2e00d
 
-app = Flask(__name__)
-  
 app.secret_key = "film_diary_secret_123"
 
 @app.route("/")
