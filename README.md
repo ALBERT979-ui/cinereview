@@ -143,47 +143,71 @@ O CineReview possui uma interface moderna com:
 
 ### 1. Clone o repositório
 
+```bash
 git clone https://github.com/ALBERT979-ui/cinereview.git
+```
 
-### 2. Entre na pasta do projeto:
+### 2. Entre na pasta do projeto
 
-cd .\cinereview\
+```bash
+cd cinereview
+```
 
 ### 3. Crie um ambiente virtual
 
-#### 3.1 No Windows:
+#### Windows
 
+```bash
 python -m venv venv
+```
 
-#### 3.2 Ative o ambiente virtual
+#### Linux/macOS
 
+```bash
+python3 -m venv venv
+```
+
+### 4. Ative o ambiente virtual
+
+#### Windows
+
+```bash
 venv\Scripts\activate
+```
 
-#### 3.3 No Linux/Mac:
+#### Linux/macOS
 
+```bash
 source venv/bin/activate
+```
 
-### 4. Instale as dependências
+### 5. Instale as dependências
 
+```bash
 pip install -r requirements.txt
+```
 
-### 5. Configure o banco de dados
+### 6. Configure o banco de dados
 
-O projeto utiliza PostgreSQL para armazenar as resenhas.
+O projeto utiliza **PostgreSQL** para armazenar as resenhas.
 
-#### 5.1 Crie um banco de dados chamado:
+#### 6.1 Crie um banco de dados chamado:
 
+```text
 cine_review
+```
 
-#### 5.2 Depois execute o arquivo:
+#### 6.2 Execute o script SQL
 
+```text
 Resenhas_DB.sql
+```
 
-Esse arquivo contém a criação da tabela utilizada pelo sistema.
+Esse arquivo cria a tabela utilizada pelo sistema.
 
-#### 6.1 Configure as informações do PostgreSQL:
+#### 6.3 Configure a conexão com o PostgreSQL
 
-Configure essas informações no arquivo `models/conexao.py`.
+No arquivo `models/conexao.py`, configure as informações do seu banco de dados:
 
 ```python
 host = "localhost"
@@ -195,13 +219,15 @@ port = "5432"
 
 ### 7. Execute a aplicação
 
-#### 7.1 No terminal:
-
+```bash
 python app.py
+```
 
 A aplicação estará disponível em:
 
+```text
 http://127.0.0.1:5000
+```
 
 ## Autor
 
