@@ -51,28 +51,27 @@ O sistema possui as seguintes funcionalidades:
 
 ## Estrutura do projeto
 
+```text
 cinereview/
 |
 |--app.py
 |
 |--models/
-|
-   |--conexao.py
-   |--resenha_model.py
+|   |--conexao.py
+|   |--resenha_model.py
 |
 |--templates/
-|
-   |--index.html
-   |--adicionar.html
-   |--editar.html
+|   |--index.html
+|   |--adicionar.html
+|   |--editar.html
 |
 |--static/
-|
-   |--style.css
+|   |--style.css
 |
 |--Resenhas_DB.sql
 |
 |--README.md
+```
 
 ## Banco de Dados
 
@@ -80,6 +79,7 @@ A principal tabela utilizada pelo sistema é a tabela resenha.
 
 ### Estrutura:
 
+```sql
 CREATE TABLE resenha (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
@@ -88,20 +88,22 @@ CREATE TABLE resenha (
     nota INTEGER NOT NULL CHECK (nota BETWEEN 0 AND 10),
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 
-### Campos:
+### Campos
 
-Campo                         Descrição
- id	                Identificador único da resenha
-nome	                 Nome do filme ou série
-ano	                Ano de lançamento do filme ou série
-resenha	                   Texto da avaliação
-nota	            Nota atribuída ao filme ou série
-data_criacao	        Data de criação da resenha
+| Campo | Descrição |
+|-------|-----------|
+| id | Identificador único da resenha |
+| nome | Nome do filme ou série |
+| ano | Ano de lançamento do filme ou série |
+| resenha | Texto da avaliação |
+| nota | Nota atribuída ao filme ou série |
+| data_criacao | Data de criação da resenha |
 
 ## Arquitetura MVC
 
-O projeto segue o padrão arquitetural MVC (Model-View-Controller). Atualmente, a camada Controller permanece integrada ao arquivo app.py, enquanto a camada Model está organizada na pasta models e a camada View na pasta templates.
+O projeto segue o padrão arquitetural MVC (Model-View-Controller). Atualmente, a camada Controller permanece integrada ao arquivo `app.py`, enquanto a camada Model está organizada na pasta `models` e a camada View na pasta `templates`.
 
 ### Model:
 
@@ -109,7 +111,7 @@ Responsável pela comunicação com o banco de dados e manipulação das informa
 
 #### Exemplo:
 
-models/resenha_model.py
+`models/resenha_model.py`
 
 ### View:
 
@@ -117,7 +119,7 @@ Responsável pela apresentação das informações ao usuário.
 
 #### Exemplo:
 
-templates/index.html
+`templates/index.html`
 
 ### Controller:
 
@@ -125,7 +127,7 @@ Responsável pela lógica da aplicação e pelas regras de negócio.
 
 #### Exemplo: 
 
-Ele ainda está integrado ao app.py.
+Ele ainda está integrado ao `app.py.`
 
 ## Interface
 
@@ -179,17 +181,17 @@ Resenhas_DB.sql
 
 Esse arquivo contém a criação da tabela utilizada pelo sistema.
 
-### 6. Configure a conexão com o banco
-
 #### 6.1 Configure as informações do PostgreSQL:
 
-Configure essas informações no arquivo models/conexao.py.
+Configure essas informações no arquivo `models/conexao.py`.
 
-host="localhost"
-database="cine_review"
-user="postgres"
-password="postgres"
-port="5432"
+```python
+host = "localhost"
+database = "cine_review"
+user = "postgres"
+password = "postgres"
+port = "5432"
+```
 
 ### 7. Execute a aplicação
 
